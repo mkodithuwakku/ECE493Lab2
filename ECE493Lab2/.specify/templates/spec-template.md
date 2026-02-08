@@ -5,6 +5,16 @@
 **Status**: Draft  
 **Input**: User description: "$ARGUMENTS"
 
+## Use Case Scope *(mandatory)*
+
+<!--
+  ACTION REQUIRED: The spec must be scoped to a single use case and its tests.
+  Use only UC-XX from GeneratedUseCases.md and AT-UCxx-* from GeneratedTestSuites.md.
+-->
+
+- **Use Case**: [UC-XX - Title]
+- **Acceptance Tests**: [AT-UCxx-yy list]
+
 ## User Scenarios & Testing *(mandatory)*
 
 <!--
@@ -99,6 +109,27 @@
 
 - **[Entity 1]**: [What it represents, key attributes without implementation]
 - **[Entity 2]**: [What it represents, relationships to other entities]
+
+## Interfaces & Contracts *(mandatory)*
+
+<!--
+  ACTION REQUIRED: Enumerate every external interface introduced or changed.
+  Include versioning/migration notes for breaking changes.
+-->
+
+- **Interface 1**: [API endpoint/UI flow/integration] - [inputs/outputs/errors]
+- **Interface 2**: [API endpoint/UI flow/integration] - [inputs/outputs/errors]
+
+## Security & Privacy Considerations *(mandatory)*
+
+<!--
+  ACTION REQUIRED: Identify authentication, authorization, and data handling
+  expectations for this feature.
+-->
+
+- **AuthN/AuthZ**: [roles, permissions, access rules]
+- **Sensitive Data**: [PII/payment/credentials handling, storage, redaction]
+- **Auditability**: [admin actions or state changes requiring audit logs]
 
 ## Success Criteria *(mandatory)*
 

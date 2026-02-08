@@ -3,7 +3,7 @@
 **Branch**: `[###-feature-name]` | **Date**: [DATE] | **Spec**: [link]
 **Input**: Feature specification from `/specs/[###-feature-name]/spec.md`
 
-**Note**: This template is filled in by the `/speckit.plan` command. See `.specify/templates/commands/plan.md` for the execution workflow.
+**Note**: This template is filled in by the `/speckit.plan` command when available.
 
 ## Summary
 
@@ -31,7 +31,15 @@
 
 *GATE: Must pass before Phase 0 research. Re-check after Phase 1 design.*
 
-[Gates determined based on constitution file]
+- User stories are prioritized and independently testable.
+- Work is scoped to exactly one use case (UC-XX) and its matching acceptance
+  tests (AT-UCxx-*), based on `GeneratedUseCases.md` and `GeneratedTestSuites.md`.
+- The working branch is named `uc-XX`.
+- Interfaces and contracts are identified; breaking changes include a migration
+  plan and versioning note.
+- Security and privacy requirements are captured for all non-public actions.
+- Tests are specified if required by the spec; test-first execution is planned.
+- Observability tasks exist for critical flows (logging, error handling, audit).
 
 ## Project Structure
 
