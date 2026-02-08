@@ -1,0 +1,6 @@
+prefix_rule(pattern=["cat"], decision="allow")
+prefix_rule(pattern=["mkdir", "-p"], decision="allow")
+prefix_rule(pattern=[".specify/scripts/bash/update-agent-context.sh"], decision="allow")
+prefix_rule(pattern=["git", "fetch", "--all", "--prune"], decision="allow")
+prefix_rule(pattern=[".specify/scripts/bash/create-new-feature.sh", "--json", "--number", "2", "--short-name", "view-registration-prices", "Generate the specification for UC-02 only. Use UC-02 from GeneratedUseCases.md and ONLY acceptance tests AT-UC02-* from GeneratedTestSuites.md. Ignore all other use cases and tests. Do not invent requirements or flows; derive functional requirements directly from UC-02 main and extension flows and ensure each requirement is verifiable by the provided acceptance tests. Fill the Use Case Scope section with UC-02 and list the AT-UC02 tests used."], decision="allow")
+prefix_rule(pattern=[".specify/scripts/bash/setup-plan.sh", "--json"], decision="allow")

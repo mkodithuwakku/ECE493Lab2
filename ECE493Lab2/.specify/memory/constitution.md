@@ -1,14 +1,12 @@
 <!--
 Sync Impact Report
-- Version change: 0.1.0 -> 0.2.0
+- Version change: 0.2.0 -> 0.3.0
 - Modified principles: None
 - Added sections: None
 - Removed sections: None
 - Modified sections: Development Workflow & Quality Gates
 - Templates requiring updates:
   - updated: .specify/templates/plan-template.md
-  - updated: .specify/templates/spec-template.md
-  - updated: .specify/templates/tasks-template.md
   - pending: .specify/templates/commands/*.md (directory not found)
 - Follow-up TODOs: None
 -->
@@ -72,7 +70,9 @@ Rationale: Clear visibility reduces support burden and speeds incident resolutio
   and the source of truth for acceptance tests is `GeneratedTestSuites.md`
   (AT-UCxx-yy). Work MUST be scoped to the selected use case and its matching
   `AT-UCxx-*` tests only.
-- A dedicated git branch per use case is REQUIRED with the name `uc-XX`.
+- A dedicated git branch per use case is REQUIRED. Branch naming follows the
+  `###-<short-name>` format created by the Spec-Kit script, and the spec MUST
+  map that branch to a single UC-XX scope.
 - The plan MUST include a Constitution Check with explicit pass/fail gates.
 - Breaking changes MUST include a migration plan and a versioning note.
 - Code review is REQUIRED for all merges to mainline branches.
@@ -86,4 +86,4 @@ Rationale: Clear visibility reduces support burden and speeds incident resolutio
 - Compliance MUST be reviewed in feature specs, implementation plans, and task
   lists before work proceeds.
 
-**Version**: 0.2.0 | **Ratified**: 2026-02-08 | **Last Amended**: 2026-02-08
+**Version**: 0.3.0 | **Ratified**: 2026-02-08 | **Last Amended**: 2026-02-08
