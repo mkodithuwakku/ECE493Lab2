@@ -34,7 +34,7 @@
 - User stories are prioritized and independently testable.
 - Work is scoped to exactly one use case (UC-XX) and its matching acceptance
   tests (AT-UCxx-*), based on `GeneratedUseCases.md` and `GeneratedTestSuites.md`.
-- The working branch is named `uc-XX`.
+- The working branch follows `###-<short-name>` and maps to a single UC-XX.
 - Interfaces and contracts are identified; breaking changes include a migration
   plan and versioning note.
 - Security and privacy requirements are captured for all non-public actions.
