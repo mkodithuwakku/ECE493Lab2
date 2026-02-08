@@ -71,7 +71,8 @@ Rationale: Clear visibility reduces support burden and speeds incident resolutio
 - The source of truth for requirements is `GeneratedUseCases.md` (UC-01 to UC-26)
   and the source of truth for acceptance tests is `GeneratedTestSuites.md`
   (AT-UCxx-yy). Work MUST be scoped to the selected use case and its matching
-  `AT-UCxx-*` tests only.
+  `AT-UCxx-*` tests only. If a test suite is misnumbered, the spec MUST document
+  an explicit mapping (e.g., UC-06 -> AT-UC07-*) and scope must follow that mapping.
 - A dedicated git branch per use case is REQUIRED. Branch naming follows the
   `###-<short-name>` format created by the Spec-Kit script, and the spec MUST
   map that branch to a single UC-XX scope.
@@ -88,4 +89,4 @@ Rationale: Clear visibility reduces support burden and speeds incident resolutio
 - Compliance MUST be reviewed in feature specs, implementation plans, and task
   lists before work proceeds.
 
-**Version**: 0.2.0 | **Ratified**: 2026-02-08 | **Last Amended**: 2026-02-08
+**Version**: 0.2.1 | **Ratified**: 2026-02-08 | **Last Amended**: 2026-02-08
