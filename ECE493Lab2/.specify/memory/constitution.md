@@ -72,7 +72,9 @@ Rationale: Clear visibility reduces support burden and speeds incident resolutio
   and the source of truth for acceptance tests is `GeneratedTestSuites.md`
   (AT-UCxx-yy). Work MUST be scoped to the selected use case and its matching
   `AT-UCxx-*` tests only.
-- A dedicated git branch per use case is REQUIRED with the name `uc-XX`.
+- A dedicated git branch per use case is REQUIRED. Branch naming follows the
+  `###-<short-name>` format created by the Spec-Kit script, and the spec MUST
+  map that branch to a single UC-XX scope.
 - The plan MUST include a Constitution Check with explicit pass/fail gates.
 - Breaking changes MUST include a migration plan and a versioning note.
 - Code review is REQUIRED for all merges to mainline branches.
