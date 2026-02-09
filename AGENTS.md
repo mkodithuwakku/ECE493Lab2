@@ -14,6 +14,8 @@ Auto-generated from all feature plans. Last updated: 2026-02-08
 - Existing CMS data store for submissions and assignments (014-access-review-form-for-assigned-paper)
 - Existing CMS data store for submissions and reviews (015-submit-completed-paper-review)
 - Existing CMS data store for submissions, assignments, and reviewers (016-assign-reviewers-to-submitted-papers)
+- Existing CMS data store for reviewers, assignments, and limits (017-enforce-reviewer-assignment-limits)
+- Existing CMS data store for submissions, reviews, notifications, and review status (018-receive-notification-submitted-reviews)
 
 - Use existing CMS stack (no new language introduced) + None new; use existing CMS frameworks/libraries (004-log-in-to-the-system)
 
@@ -33,9 +35,9 @@ tests/
 Use existing CMS stack (no new language introduced): Follow standard conventions
 
 ## Recent Changes
+- 018-receive-notification-submitted-reviews: Added Existing CMS stack (use current project language/version) + Existing CMS frameworks/libraries
+- 017-enforce-reviewer-assignment-limits: Added Existing CMS stack (use current project language/version) + Existing CMS frameworks/libraries
 - 016-assign-reviewers-to-submitted-papers: Added Existing CMS stack (use current project language/version) + Existing CMS frameworks/libraries
-- 015-submit-completed-paper-review: Added Existing CMS stack (use current project language/version) + Existing CMS frameworks/libraries
-- 014-access-review-form-for-assigned-paper: Added Existing CMS stack (use current project language/version) + Existing CMS frameworks/libraries
 
 
 <!-- MANUAL ADDITIONS START -->
