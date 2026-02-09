@@ -1,0 +1,38 @@
+openapi: 3.0.3
+info:
+  title: UC-15 Review Submission API
+  version: 1.0.0
+paths:
+  /papers/{paperId}/reviews:
+    post:
+      summary: Submit review for assigned paper
+      description: Submits a completed review for the authenticated reviewer if assigned to the paper.
+      parameters:
+        - name: paperId
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                fieldValues:
+                  type: object
+              required: [fieldValues]
+      responses:
+        "200":
+          description: Review submitted successfully
+        "400":
+          description: Validation errors (missing/invalid fields)
+        "401":
+          description: User is not authenticated
+        "403":
+          description: User is not authorized for this paper
+        "409":
+          description: Review already submitted
+        "500":
+          description: Review could not be stored

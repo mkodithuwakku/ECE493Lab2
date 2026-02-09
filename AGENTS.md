@@ -12,6 +12,7 @@ Auto-generated from all feature plans. Last updated: 2026-02-08
 - Existing CMS data store for invitations and assignments (012-receive-and-respond-to-review-invitation)
 - Existing CMS data store for assigned papers (013-view-assigned-papers)
 - Existing CMS data store for submissions and assignments (014-access-review-form-for-assigned-paper)
+- Existing CMS data store for submissions and reviews (015-submit-completed-paper-review)
 
 - Use existing CMS stack (no new language introduced) + None new; use existing CMS frameworks/libraries (004-log-in-to-the-system)
 
@@ -31,9 +32,9 @@ tests/
 Use existing CMS stack (no new language introduced): Follow standard conventions
 
 ## Recent Changes
+- 015-submit-completed-paper-review: Added Existing CMS stack (use current project language/version) + Existing CMS frameworks/libraries
 - 014-access-review-form-for-assigned-paper: Added Existing CMS stack (use current project language/version) + Existing CMS frameworks/libraries
 - 013-view-assigned-papers: Added Existing CMS stack (use current project language/version) + Existing CMS frameworks/libraries
-- 012-receive-and-respond-to-review-invitation: Added Existing CMS stack (use current project language/version) + Existing CMS frameworks/libraries
 
 
 <!-- MANUAL ADDITIONS START -->
