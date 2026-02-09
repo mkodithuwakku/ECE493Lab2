@@ -1,0 +1,70 @@
+openapi: 3.0.3
+info:
+  title: UC-20 Conference Configuration API
+  version: 1.0.0
+paths:
+  /admin/conference-configuration:
+    get:
+      summary: Get conference configuration parameters
+      description: Returns current conference configuration values for authorized administrators.
+      responses:
+        "200":
+          description: Configuration returned
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  submissionDeadline:
+                    type: string
+                    format: date-time
+                  reviewDeadline:
+                    type: string
+                    format: date-time
+                  conferenceStartDate:
+                    type: string
+                    format: date-time
+                  conferenceEndDate:
+                    type: string
+                    format: date-time
+                required: [submissionDeadline, reviewDeadline, conferenceStartDate, conferenceEndDate]
+        "401":
+          description: User is not authenticated
+        "403":
+          description: User is not authorized
+        "503":
+          description: Configuration retrieval failed
+    post:
+      summary: Update conference configuration parameters
+      description: Updates configuration values for deadlines and conference dates.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                submissionDeadline:
+                  type: string
+                  format: date-time
+                reviewDeadline:
+                  type: string
+                  format: date-time
+                conferenceStartDate:
+                  type: string
+                  format: date-time
+                conferenceEndDate:
+                  type: string
+                  format: date-time
+              required: [submissionDeadline, reviewDeadline, conferenceStartDate, conferenceEndDate]
+      responses:
+        "200":
+          description: Configuration updated successfully
+        "400":
+          description: Validation errors (invalid values or date relationships)
+        "401":
+          description: User is not authenticated
+        "403":
+          description: User is not authorized
+        "500":
+          description: Configuration could not be saved
