@@ -1,0 +1,61 @@
+openapi: 3.0.3
+info:
+  title: UC-14 Review Form Access API
+  version: 1.0.0
+paths:
+  /papers/{paperId}/review-form:
+    get:
+      summary: Get review form for assigned paper
+      description: Returns the review form for the authenticated reviewer if assigned to the paper.
+      parameters:
+        - name: paperId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: Review form returned
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  paperId:
+                    type: string
+                  title:
+                    type: string
+                  formFields:
+                    type: array
+                    items:
+                      type: object
+                required: [paperId]
+        "401":
+          description: User is not authenticated
+        "403":
+          description: User is not authorized for this paper
+        "404":
+          description: Manuscript is unavailable (review form access blocked)
+        "503":
+          description: Review form could not be retrieved
+  /papers/{paperId}/manuscript:
+    get:
+      summary: Access manuscript for assigned paper
+      description: Returns manuscript access for an assigned paper when available.
+      parameters:
+        - name: paperId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: Manuscript access provided
+        "401":
+          description: User is not authenticated
+        "403":
+          description: User is not authorized for this paper
+        "404":
+          description: Manuscript is unavailable
+        "503":
+          description: Manuscript could not be retrieved
