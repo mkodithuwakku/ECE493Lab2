@@ -1,0 +1,93 @@
+openapi: 3.0.3
+info:
+  title: Conference Registration API
+  version: 0.1.0
+  description: Contracts for registering for conference attendance (UC-24).
+servers:
+  - url: /api
+paths:
+  /registration:
+    post:
+      summary: Register for conference attendance
+      description: Creates a registration when registration is open and input is valid; requires attendee authentication.
+      responses:
+        "200":
+          description: Registration successful
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/RegistrationResponse"
+        "400":
+          description: Invalid or unavailable attendance type
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+        "401":
+          description: Not authenticated
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+        "403":
+          description: Registration closed
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+        "500":
+          description: Registration storage failure
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+  /registration/status:
+    get:
+      summary: Get registration status
+      description: Returns the attendee registration status and payment requirement outcome.
+      responses:
+        "200":
+          description: Status retrieved
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/RegistrationStatus"
+        "401":
+          description: Not authenticated
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+components:
+  schemas:
+    RegistrationResponse:
+      type: object
+      properties:
+        registration_id:
+          type: string
+        status:
+          type: string
+          enum: [registered, pending_unpaid]
+        message:
+          type: string
+        payment_required:
+          type: boolean
+      required: [registration_id, status, message, payment_required]
+    RegistrationStatus:
+      type: object
+      properties:
+        registration_id:
+          type: string
+        status:
+          type: string
+          enum: [registered, pending_unpaid]
+        payment_required:
+          type: boolean
+      required: [registration_id, status, payment_required]
+    ErrorResponse:
+      type: object
+      properties:
+        error:
+          type: string
+          description: Clear, user-facing error message.
+      required: [error]
