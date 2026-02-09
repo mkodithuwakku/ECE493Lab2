@@ -9,6 +9,7 @@ Auto-generated from all feature plans. Last updated: 2026-02-08
 - Existing CMS data store for submissions and drafts (009-save-paper-submission-progress)
 - Existing CMS stack (use current project language/version) + Existing CMS frameworks/libraries (010-receive-paper-acceptance-or-rejection-decision)
 - Existing CMS data store for schedules and submissions (011-view-conference-schedule-for-accepted-paper)
+- Existing CMS data store for invitations and assignments (012-receive-and-respond-to-review-invitation)
 
 - Use existing CMS stack (no new language introduced) + None new; use existing CMS frameworks/libraries (004-log-in-to-the-system)
 
@@ -28,9 +29,9 @@ tests/
 Use existing CMS stack (no new language introduced): Follow standard conventions
 
 ## Recent Changes
+- 012-receive-and-respond-to-review-invitation: Added Existing CMS stack (use current project language/version) + Existing CMS frameworks/libraries
 - 011-view-conference-schedule-for-accepted-paper: Added Existing CMS stack (use current project language/version) + Existing CMS frameworks/libraries
 - 010-receive-paper-acceptance-or-rejection-decision: Added Existing CMS stack (use current project language/version) + Existing CMS frameworks/libraries
-- 009-save-paper-submission-progress: Added Use existing CMS stack (no new language introduced) + None new; use existing CMS frameworks/libraries
 
 
 <!-- MANUAL ADDITIONS START -->
