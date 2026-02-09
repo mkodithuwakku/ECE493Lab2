@@ -19,6 +19,8 @@ Auto-generated from all feature plans. Last updated: 2026-02-08
 - Existing CMS data store for submissions, reviews, decisions, and notifications (019-make-final-paper-decision)
 - Existing CMS data store for conference configuration parameters (020-edit-conference-schedule)
 - Existing CMS data store for accepted papers, scheduling resources, and generated schedules (021-generate-conference-schedule)
+- Existing CMS stack (use current project language/version) + Existing CMS frameworks/libraries (no new dependencies) (023-publish-conference-schedule)
+- Existing CMS data store for schedules and publication status (023-publish-conference-schedule)
 
 - Use existing CMS stack (no new language introduced) + None new; use existing CMS frameworks/libraries (004-log-in-to-the-system)
 
@@ -38,9 +40,9 @@ tests/
 Use existing CMS stack (no new language introduced): Follow standard conventions
 
 ## Recent Changes
+- 023-publish-conference-schedule: Added Existing CMS stack (use current project language/version) + Existing CMS frameworks/libraries (no new dependencies)
 - 021-generate-conference-schedule: Added Existing CMS stack (use current project language/version) + Existing CMS frameworks/libraries
 - 020-edit-conference-schedule: Added Existing CMS stack (use current project language/version) + Existing CMS frameworks/libraries
-- 019-make-final-paper-decision: Added Existing CMS stack (use current project language/version) + Existing CMS frameworks/libraries
 
 
 <!-- MANUAL ADDITIONS START -->

@@ -1,0 +1,88 @@
+openapi: 3.0.3
+info:
+  title: Conference Schedule Publication API
+  version: 0.1.0
+  description: Contracts for publishing and viewing the conference schedule (UC-23).
+servers:
+  - url: /api
+paths:
+  /admin/schedule/publish:
+    post:
+      summary: Publish the finalized and approved conference schedule
+      description: Publishes the schedule if finalized and approved; requires administrator authentication.
+      responses:
+        "200":
+          description: Schedule published successfully
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/PublishResponse"
+        "400":
+          description: Schedule not finalized or approved
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+        "401":
+          description: Not authenticated
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+        "500":
+          description: Publication failed due to server/deployment or status update error
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+  /schedule:
+    get:
+      summary: View the published conference schedule
+      description: Returns the published schedule for authors, attendees, and public guests.
+      responses:
+        "200":
+          description: Published schedule accessible
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Schedule"
+        "404":
+          description: Schedule not published
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+components:
+  schemas:
+    PublishResponse:
+      type: object
+      properties:
+        status:
+          type: string
+          enum: [published]
+        message:
+          type: string
+          description: Confirmation message of successful publication.
+        notification_warning:
+          type: string
+          description: Optional warning message if notification delivery failed.
+      required: [status, message]
+    Schedule:
+      type: object
+      properties:
+        id:
+          type: string
+        status:
+          type: string
+          enum: [published]
+        published_at:
+          type: string
+          format: date-time
+      required: [id, status]
+    ErrorResponse:
+      type: object
+      properties:
+        error:
+          type: string
+          description: Generic, user-friendly error message.
+      required: [error]
