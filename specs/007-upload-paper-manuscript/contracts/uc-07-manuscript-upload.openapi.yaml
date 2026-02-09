@@ -1,0 +1,77 @@
+openapi: 3.0.3
+info:
+  title: UC-07 Manuscript Upload API
+  version: 1.0.0
+  description: Upload a manuscript file for a paper submission.
+paths:
+  /submissions/{submissionId}/manuscript:
+    post:
+      summary: Upload manuscript file
+      description: Upload and associate a manuscript file with an existing submission.
+      parameters:
+        - name: submissionId
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                file:
+                  type: string
+                  format: binary
+              required:
+                - file
+      responses:
+        "201":
+          description: Upload successful
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  submissionId:
+                    type: string
+                  fileId:
+                    type: string
+                  message:
+                    type: string
+        "400":
+          description: Validation error (format or size)
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+                  message:
+                    type: string
+                  details:
+                    type: string
+        "409":
+          description: Upload interrupted
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+                  message:
+                    type: string
+        "500":
+          description: Storage failure
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+                  message:
+                    type: string

@@ -1,0 +1,83 @@
+openapi: 3.0.3
+info:
+  title: UC-02 Registration Pricing
+  version: 1.0.0
+paths:
+  /pricing:
+    get:
+      summary: Get conference registration prices
+      responses:
+        "200":
+          description: Pricing retrieved successfully
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/PricingResponse"
+        "206":
+          description: Partial pricing information retrieved
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/PartialPricingResponse"
+        "404":
+          description: Pricing information not available
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/MessageResponse"
+        "500":
+          description: Error retrieving pricing information
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/MessageResponse"
+components:
+  schemas:
+    PricingResponse:
+      type: object
+      required:
+        - status
+        - prices
+      properties:
+        status:
+          type: string
+          example: ok
+        prices:
+          type: array
+          items:
+            $ref: "#/components/schemas/PriceItem"
+    PartialPricingResponse:
+      type: object
+      required:
+        - status
+        - prices
+        - warning
+      properties:
+        status:
+          type: string
+          example: partial
+        prices:
+          type: array
+          items:
+            $ref: "#/components/schemas/PriceItem"
+        warning:
+          type: string
+          description: Message indicating pricing details are incomplete
+    PriceItem:
+      type: object
+      required:
+        - attendance_type
+        - amount
+      properties:
+        attendance_type:
+          type: string
+        amount:
+          type: number
+    MessageResponse:
+      type: object
+      required:
+        - message
+      properties:
+        message:
+          type: string
+          description: User-facing message

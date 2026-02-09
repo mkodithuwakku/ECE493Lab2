@@ -1,0 +1,84 @@
+openapi: 3.0.3
+info:
+  title: UC-03 Registration
+  version: 1.0.0
+paths:
+  /register:
+    post:
+      summary: Register a new user account
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/RegistrationRequest"
+      responses:
+        "201":
+          description: Account created and user redirected to login
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/RegistrationSuccess"
+        "400":
+          description: Invalid or incomplete registration information
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ValidationError"
+        "409":
+          description: Email address already registered
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/MessageResponse"
+        "422":
+          description: Password does not meet security requirements
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/MessageResponse"
+        "500":
+          description: Registration failure due to storage error
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/MessageResponse"
+components:
+  schemas:
+    RegistrationRequest:
+      type: object
+      required:
+        - email
+        - password
+      properties:
+        email:
+          type: string
+        password:
+          type: string
+    RegistrationSuccess:
+      type: object
+      required:
+        - message
+        - redirect_to
+      properties:
+        message:
+          type: string
+        redirect_to:
+          type: string
+          example: /login
+    ValidationError:
+      type: object
+      required:
+        - errors
+      properties:
+        errors:
+          type: array
+          items:
+            type: string
+    MessageResponse:
+      type: object
+      required:
+        - message
+      properties:
+        message:
+          type: string

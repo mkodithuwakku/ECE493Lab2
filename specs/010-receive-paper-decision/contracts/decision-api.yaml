@@ -1,0 +1,39 @@
+openapi: 3.0.3
+info:
+  title: UC-10 Decision Access API
+  version: 1.0.0
+paths:
+  /submissions/{submissionId}/decision:
+    get:
+      summary: Get decision for a submission
+      description: Returns the final decision status for the specified submission when accessed by an author.
+      parameters:
+        - name: submissionId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: Decision status returned
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  decisionStatus:
+                    type: string
+                    enum: [not_recorded, recorded]
+                  decisionValue:
+                    type: string
+                    enum: [accepted, rejected]
+                    nullable: true
+                required: [decisionStatus]
+        "401":
+          description: User is not authenticated
+        "403":
+          description: User is not an author of the submission
+        "500":
+          description: Decision could not be retrieved
+        "503":
+          description: Decision data unavailable due to system error

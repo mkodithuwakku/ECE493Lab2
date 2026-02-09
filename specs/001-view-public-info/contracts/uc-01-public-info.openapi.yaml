@@ -1,0 +1,93 @@
+openapi: 3.0.3
+info:
+  title: UC-01 Public Conference Information
+  version: 1.0.0
+paths:
+  /:
+    get:
+      summary: Get public conference announcements and information
+      responses:
+        "200":
+          description: Public information retrieved successfully
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/PublicInfoResponse"
+        "206":
+          description: Partial public information retrieved
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/PartialPublicInfoResponse"
+        "500":
+          description: Public information retrieval error
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+        "503":
+          description: Website unavailable
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+components:
+  schemas:
+    PublicInfoResponse:
+      type: object
+      required:
+        - status
+        - announcements
+        - information
+      properties:
+        status:
+          type: string
+          example: ok
+        announcements:
+          type: array
+          items:
+            $ref: "#/components/schemas/PublicItem"
+        information:
+          type: array
+          items:
+            $ref: "#/components/schemas/PublicItem"
+        message:
+          type: string
+          description: Optional user-facing message for empty data
+    PartialPublicInfoResponse:
+      type: object
+      required:
+        - status
+        - announcements
+        - information
+        - warning
+      properties:
+        status:
+          type: string
+          example: partial
+        announcements:
+          type: array
+          items:
+            $ref: "#/components/schemas/PublicItem"
+        information:
+          type: array
+          items:
+            $ref: "#/components/schemas/PublicItem"
+        warning:
+          type: string
+          description: Message indicating some information could not be loaded
+    PublicItem:
+      type: object
+      required:
+        - content
+      properties:
+        content:
+          type: string
+    ErrorResponse:
+      type: object
+      required:
+        - message
+      properties:
+        message:
+          type: string
+          description: User-facing error message
