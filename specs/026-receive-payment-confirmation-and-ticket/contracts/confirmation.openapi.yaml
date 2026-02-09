@@ -1,0 +1,123 @@
+openapi: 3.0.3
+info:
+  title: Confirmation & Ticket API
+  version: 0.1.0
+  description: Contracts for viewing confirmation, ticket, and receipt (UC-26).
+servers:
+  - url: /api
+paths:
+  /confirmation:
+    get:
+      summary: View payment confirmation and ticket
+      description: Returns confirmation details and ticket for a paid/confirmed registration; requires authentication.
+      responses:
+        "200":
+          description: Confirmation and ticket displayed
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ConfirmationResponse"
+        "401":
+          description: Not authenticated
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+        "403":
+          description: Not authorized to access another attendee's confirmation
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+        "404":
+          description: Registration not paid/confirmed
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+        "500":
+          description: Error retrieving/generating confirmation
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+  /receipt:
+    get:
+      summary: View or download receipt (if supported)
+      description: Returns receipt for a paid/confirmed registration when enabled.
+      responses:
+        "200":
+          description: Receipt returned
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ReceiptResponse"
+        "401":
+          description: Not authenticated
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+        "403":
+          description: Not authorized
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+        "404":
+          description: Receipt not available or registration not paid/confirmed
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+        "500":
+          description: Error retrieving/generating receipt
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+components:
+  schemas:
+    ConfirmationResponse:
+      type: object
+      properties:
+        registration_status:
+          type: string
+          enum: [paid_confirmed]
+        attendee_name:
+          type: string
+        attendance_type:
+          type: string
+        conference_name:
+          type: string
+        payment_amount:
+          type: string
+        payment_time:
+          type: string
+          format: date-time
+        transaction_reference_id:
+          type: string
+        ticket_code:
+          type: string
+      required: [registration_status, attendee_name, conference_name, transaction_reference_id, ticket_code]
+    ReceiptResponse:
+      type: object
+      properties:
+        receipt_number:
+          type: string
+        payment_amount:
+          type: string
+        attendee_name:
+          type: string
+        conference_name:
+          type: string
+        transaction_reference_id:
+          type: string
+      required: [receipt_number, payment_amount, attendee_name, conference_name]
+    ErrorResponse:
+      type: object
+      properties:
+        error:
+          type: string
+          description: Clear, user-facing error message.
+      required: [error]
