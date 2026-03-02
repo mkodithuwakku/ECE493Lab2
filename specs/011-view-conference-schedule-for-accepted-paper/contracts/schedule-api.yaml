@@ -1,0 +1,39 @@
+openapi: 3.0.3
+info:
+  title: UC-11 Schedule Access API
+  version: 1.0.0
+paths:
+  /schedule:
+    get:
+      summary: Get published conference schedule
+      description: Returns the published conference schedule for an authenticated author.
+      responses:
+        "200":
+          description: Schedule returned
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  scheduleStatus:
+                    type: string
+                    enum: [published, unpublished]
+                  entries:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        submissionId:
+                          type: string
+                        presentationTime:
+                          type: string
+                        roomOrLocation:
+                          type: string
+                      required: [submissionId]
+                required: [scheduleStatus]
+        "401":
+          description: User is not authenticated
+        "403":
+          description: User is not authorized to view schedule
+        "500":
+          description: Schedule could not be retrieved

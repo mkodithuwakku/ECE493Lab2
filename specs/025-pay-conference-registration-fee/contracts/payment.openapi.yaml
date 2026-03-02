@@ -1,0 +1,107 @@
+openapi: 3.0.3
+info:
+  title: Conference Payment API
+  version: 0.1.0
+  description: Contracts for paying conference registration fees (UC-25).
+servers:
+  - url: /api
+paths:
+  /payment:
+    post:
+      summary: Pay conference registration fee
+      description: Initiates payment for a pending/unpaid registration; requires attendee authentication.
+      responses:
+        "200":
+          description: Payment successful
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/PaymentResponse"
+        "400":
+          description: Invalid payment information
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+        "401":
+          description: Not authenticated
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+        "402":
+          description: Payment declined or canceled
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+        "409":
+          description: No pending payment or already paid
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+        "503":
+          description: Payment gateway unavailable/timeout
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+        "500":
+          description: Failed to record successful payment
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+  /payment/status:
+    get:
+      summary: Get payment status
+      description: Returns payment and registration status for the attendee.
+      responses:
+        "200":
+          description: Status retrieved
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/PaymentStatus"
+        "401":
+          description: Not authenticated
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+components:
+  schemas:
+    PaymentResponse:
+      type: object
+      properties:
+        payment_id:
+          type: string
+        status:
+          type: string
+          enum: [successful]
+        message:
+          type: string
+        receipt:
+          type: string
+          description: Optional receipt if implemented.
+      required: [payment_id, status, message]
+    PaymentStatus:
+      type: object
+      properties:
+        registration_id:
+          type: string
+        registration_status:
+          type: string
+          enum: [pending_unpaid, paid_confirmed]
+        payment_status:
+          type: string
+          enum: [successful, declined, canceled, failed]
+      required: [registration_id, registration_status, payment_status]
+    ErrorResponse:
+      type: object
+      properties:
+        error:
+          type: string
+          description: Clear, user-facing error message.
+      required: [error]

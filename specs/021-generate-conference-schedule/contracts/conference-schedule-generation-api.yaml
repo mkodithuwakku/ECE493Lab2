@@ -1,0 +1,35 @@
+openapi: 3.0.3
+info:
+  title: UC-21 Conference Schedule Generation API
+  version: 1.0.0
+paths:
+  /admin/conference-schedule/generate:
+    post:
+      summary: Generate conference schedule
+      description: Generates an initial conference schedule from accepted papers and scheduling resources.
+      responses:
+        "200":
+          description: Schedule generated and stored
+        "400":
+          description: No accepted papers or unsatisfiable constraints
+        "401":
+          description: User is not authenticated
+        "403":
+          description: User is not authorized
+        "500":
+          description: Schedule generation failed
+        "503":
+          description: Schedule could not be stored
+  /admin/conference-schedule:
+    get:
+      summary: Get generated conference schedule
+      description: Returns the generated conference schedule for administrator review.
+      responses:
+        "200":
+          description: Schedule returned
+        "401":
+          description: User is not authenticated
+        "403":
+          description: User is not authorized
+        "404":
+          description: No generated schedule available

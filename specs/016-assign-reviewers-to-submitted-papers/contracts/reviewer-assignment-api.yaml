@@ -1,0 +1,44 @@
+openapi: 3.0.3
+info:
+  title: UC-16 Reviewer Assignment API
+  version: 1.0.0
+paths:
+  /papers/{paperId}/reviewers:
+    post:
+      summary: Assign reviewer(s) to a submitted paper
+      description: Assigns one or more reviewers to the submitted paper for an authenticated editor.
+      parameters:
+        - name: paperId
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                reviewerIds:
+                  type: array
+                  items:
+                    type: string
+              required: [reviewerIds]
+      responses:
+        "200":
+          description: Assignments created successfully
+        "400":
+          description: Invalid reviewer identifier/email
+        "401":
+          description: User is not authenticated
+        "403":
+          description: User is not authorized (not an editor)
+        "409":
+          description: Duplicate assignment or reviewer already assigned
+        "422":
+          description: Reviewer assignment limit reached
+        "500":
+          description: Assignment could not be stored
+        "502":
+          description: Notification delivery failed (assignment recorded)

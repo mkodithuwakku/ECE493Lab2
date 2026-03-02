@@ -1,0 +1,56 @@
+openapi: 3.0.3
+info:
+  title: UC-12 Review Invitations API
+  version: 1.0.0
+paths:
+  /review-invitations:
+    get:
+      summary: List pending review invitations
+      description: Returns pending review invitations for the authenticated reviewer.
+      responses:
+        "200":
+          description: Invitations returned
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    invitationId:
+                      type: string
+                    paperId:
+                      type: string
+                    status:
+                      type: string
+                      enum: [pending]
+        "401":
+          description: User is not authenticated
+        "403":
+          description: User is not authorized
+  /review-invitations/{invitationId}/accept:
+    post:
+      summary: Accept a review invitation
+      responses:
+        "200":
+          description: Acceptance recorded and assignment created
+        "400":
+          description: Invitation cannot be accepted (e.g., assignment limit)
+        "401":
+          description: User is not authenticated
+        "403":
+          description: User is not authorized
+        "500":
+          description: Invitation response could not be processed
+  /review-invitations/{invitationId}/reject:
+    post:
+      summary: Reject a review invitation
+      responses:
+        "200":
+          description: Rejection recorded
+        "401":
+          description: User is not authenticated
+        "403":
+          description: User is not authorized
+        "500":
+          description: Invitation response could not be processed
