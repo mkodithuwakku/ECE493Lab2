@@ -16,3 +16,9 @@ def redact_metadata_payload(message: str | None) -> str | None:
     if message is None:
         return None
     return "[redacted]"
+
+
+def redact_draft_payload(message: str | None) -> str | None:
+    if message is None:
+        return None
+    return "[redacted]"

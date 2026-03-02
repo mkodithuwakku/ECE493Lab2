@@ -13,19 +13,19 @@ Validate the save-draft flow against AT-UC09-01 through AT-UC09-04.
 ### AT-UC09-01 Save Submission Progress Successfully
 1. Enter valid submission data including minimum fields (title, abstract, one author).
 2. Select save.
-3. Expect validation success, draft saved, confirmation message.
+3. Expect validation success, draft saved, confirmation message: `Draft saved successfully.`
 
 ### AT-UC09-02 Invalid Submission Data Prevents Save
 1. Enter invalid submission data.
 2. Select save.
-3. Expect validation error messages and no draft saved.
+3. Expect validation error messages and no draft saved: `Submission data is invalid: ...`
 
 ### AT-UC09-03 Required Minimum Draft Information Missing
 1. Leave out minimum draft fields.
 2. Select save.
-3. Expect warning with save/cancel choice.
-4. Choose save anyway and expect draft stored as incomplete.
+3. Expect warning with save/cancel choice: `Submission is missing required draft information.`
+4. Choose save anyway and expect draft stored as incomplete: `Draft saved with incomplete information.`
 
 ### AT-UC09-04 System Fails to Store Draft
 1. Simulate storage failure while saving.
-2. Expect save failure message and no draft stored.
+2. Expect save failure message and no draft stored: `Unable to save draft. Please try again.`

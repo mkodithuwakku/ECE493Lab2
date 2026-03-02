@@ -23,10 +23,10 @@ description: "Task list for UC-09 save submission progress implementation"
 
 **Purpose**: Initialize shared modules used across draft save stories
 
-- [ ] T001 Create draft validation helper in backend/src/services/draft_validation.ts
-- [ ] T002 [P] Create save-draft API client wrapper in frontend/src/services/draft_client.ts
-- [ ] T003 [P] Create draft logging utility in backend/src/services/draft_logger.ts
-- [ ] T004 [P] Create log redaction helper in backend/src/services/log_redactor.ts
+- [x] T001 Create draft validation helper in backend/src/services/draft_validation.ts
+- [x] T002 [P] Create save-draft API client wrapper in frontend/src/services/draft_client.ts
+- [x] T003 [P] Create draft logging utility in backend/src/services/draft_logger.ts
+- [x] T004 [P] Create log redaction helper in backend/src/services/log_redactor.ts
 
 ---
 
@@ -36,11 +36,11 @@ description: "Task list for UC-09 save submission progress implementation"
 
 **⚠️ CRITICAL**: No user story work can begin until this phase is complete
 
-- [ ] T005 Create submission repository abstraction in backend/src/services/submission_repository.ts
-- [ ] T006 [P] Create draft repository abstraction in backend/src/services/draft_repository.ts
-- [ ] T007 [P] Create draft error mapper in backend/src/api/submissions/draft_error_mapper.ts
-- [ ] T008 Register save-draft route/controller in backend/src/api/submissions/save_draft_controller.ts
-- [ ] T009 Ensure auth/authorization middleware protects save-draft endpoint in backend/src/api/submissions/save_draft_controller.ts
+- [x] T005 Create submission repository abstraction in backend/src/services/submission_repository.ts
+- [x] T006 [P] Create draft repository abstraction in backend/src/services/draft_repository.ts
+- [x] T007 [P] Create draft error mapper in backend/src/api/submissions/draft_error_mapper.ts
+- [x] T008 Register save-draft route/controller in backend/src/api/submissions/save_draft_controller.ts
+- [x] T009 Ensure auth/authorization middleware protects save-draft endpoint in backend/src/api/submissions/save_draft_controller.ts
 
 **Checkpoint**: Foundation ready - user story implementation can now begin
 
@@ -54,11 +54,11 @@ description: "Task list for UC-09 save submission progress implementation"
 
 ### Implementation for User Story 1
 
-- [ ] T010 [US1] Implement validation + storage + update in backend/src/services/draft_service.ts
-- [ ] T011 [US1] Integrate structured logging + redaction in backend/src/services/draft_service.ts
-- [ ] T012 [US1] Implement success response in backend/src/api/submissions/save_draft_controller.ts
-- [ ] T013 [P] [US1] Implement save-draft UI action + success handling in frontend/src/pages/SubmissionProgressPage.tsx
-- [ ] T014 [US1] Wire save-draft API call in frontend/src/services/draft_client.ts
+- [x] T010 [US1] Implement validation + storage + update in backend/src/services/draft_service.ts
+- [x] T011 [US1] Integrate structured logging + redaction in backend/src/services/draft_service.ts
+- [x] T012 [US1] Implement success response in backend/src/api/submissions/save_draft_controller.ts
+- [x] T013 [P] [US1] Implement save-draft UI action + success handling in frontend/src/pages/SubmissionProgressPage.tsx
+- [x] T014 [US1] Wire save-draft API call in frontend/src/services/draft_client.ts
 
 **Checkpoint**: User Story 1 is independently functional
 
@@ -72,9 +72,9 @@ description: "Task list for UC-09 save submission progress implementation"
 
 ### Implementation for User Story 2
 
-- [ ] T015 [US2] Add invalid-data detection in backend/src/services/draft_validation.ts
-- [ ] T016 [US2] Return validation errors in backend/src/api/submissions/save_draft_controller.ts
-- [ ] T017 [P] [US2] Display validation error messages in frontend/src/pages/SubmissionProgressPage.tsx
+- [x] T015 [US2] Add invalid-data detection in backend/src/services/draft_validation.ts
+- [x] T016 [US2] Return validation errors in backend/src/api/submissions/save_draft_controller.ts
+- [x] T017 [P] [US2] Display validation error messages in frontend/src/pages/SubmissionProgressPage.tsx
 
 **Checkpoint**: User Story 2 is independently functional
 
@@ -88,10 +88,10 @@ description: "Task list for UC-09 save submission progress implementation"
 
 ### Implementation for User Story 3
 
-- [ ] T018 [US3] Add minimum-field detection in backend/src/services/draft_validation.ts
-- [ ] T019 [US3] Return incomplete-data warning in backend/src/api/submissions/save_draft_controller.ts
-- [ ] T020 [US3] Save draft as incomplete when save-anyway chosen in backend/src/services/draft_service.ts
-- [ ] T021 [P] [US3] Display warning with save/cancel choice in frontend/src/pages/SubmissionProgressPage.tsx
+- [x] T018 [US3] Add minimum-field detection in backend/src/services/draft_validation.ts
+- [x] T019 [US3] Return incomplete-data warning in backend/src/api/submissions/save_draft_controller.ts
+- [x] T020 [US3] Save draft as incomplete when save-anyway chosen in backend/src/services/draft_service.ts
+- [x] T021 [P] [US3] Display warning with save/cancel choice in frontend/src/pages/SubmissionProgressPage.tsx
 
 **Checkpoint**: User Story 3 is independently functional
 
@@ -105,9 +105,9 @@ description: "Task list for UC-09 save submission progress implementation"
 
 ### Implementation for User Story 4
 
-- [ ] T022 [US4] Map storage failure in backend/src/services/draft_service.ts
-- [ ] T023 [US4] Return storage failure response in backend/src/api/submissions/save_draft_controller.ts
-- [ ] T024 [P] [US4] Display save failure message in frontend/src/pages/SubmissionProgressPage.tsx
+- [x] T022 [US4] Map storage failure in backend/src/services/draft_service.ts
+- [x] T023 [US4] Return storage failure response in backend/src/api/submissions/save_draft_controller.ts
+- [x] T024 [P] [US4] Display save failure message in frontend/src/pages/SubmissionProgressPage.tsx
 
 **Checkpoint**: User Story 4 is independently functional
 
@@ -117,8 +117,8 @@ description: "Task list for UC-09 save submission progress implementation"
 
 **Purpose**: Finish cross-cutting updates and documentation alignment
 
-- [ ] T025 [P] Align API contract in /Users/mkodi/Documents/University/Year 5/ECE 493/Lab 2/ECE493Lab2/specs/009-save-paper-submission-progress/contracts/uc-09-save-draft.openapi.yaml
-- [ ] T026 [P] Update quickstart notes for save-draft error handling in /Users/mkodi/Documents/University/Year 5/ECE 493/Lab 2/ECE493Lab2/specs/009-save-paper-submission-progress/quickstart.md
+- [x] T025 [P] Align API contract in /Users/mkodi/Documents/University/Year 5/ECE 493/Lab 2/ECE493Lab2/specs/009-save-paper-submission-progress/contracts/uc-09-save-draft.openapi.yaml
+- [x] T026 [P] Update quickstart notes for save-draft error handling in /Users/mkodi/Documents/University/Year 5/ECE 493/Lab 2/ECE493Lab2/specs/009-save-paper-submission-progress/quickstart.md
 
 ---
 
