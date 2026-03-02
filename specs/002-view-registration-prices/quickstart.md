@@ -15,8 +15,9 @@ Validate the UC-02 pricing view behavior for guests.
    when data is available. (AT-UC02-01)
 5. Validate the alternate/error states by preparing the system state and
    reloading the pricing view:
-   - Show “registration prices not currently available” when no pricing data
-     exists. (AT-UC02-02)
-   - Show a temporary system issue message when retrieval fails. (AT-UC02-03)
-   - Show available prices with a warning about incomplete details when pricing
-     data is partial. (AT-UC02-04)
+   - Show “Registration prices are not currently available.” when no pricing
+     data exists. (AT-UC02-02)
+   - Show “Registration pricing cannot be retrieved at this time.” when
+     retrieval fails. (AT-UC02-03)
+   - Show available prices with a warning “Some pricing details may be
+     incomplete.” when pricing data is partial. (AT-UC02-04)

@@ -26,9 +26,9 @@ description: "Task list for UC-02 View Conference Registration Prices"
 
 **Purpose**: Project initialization and basic structure
 
-- [ ] T001 Confirm backend structure exists at /Users/mkodi/Documents/University/Year 5/ECE 493/Lab 2/ECE493Lab2/backend/src/
-- [ ] T002 Confirm frontend structure exists at /Users/mkodi/Documents/University/Year 5/ECE 493/Lab 2/ECE493Lab2/frontend/src/
-- [ ] T003 [P] Create UC-02 contract reference at /Users/mkodi/Documents/University/Year 5/ECE 493/Lab 2/ECE493Lab2/specs/002-view-registration-prices/contracts/uc-02-pricing.openapi.yaml (if not already present)
+- [X] T001 Confirm backend structure exists at /Users/mkodi/Documents/University/Year 5/ECE 493/Lab 2/ECE493Lab2/backend/src/
+- [X] T002 Confirm frontend structure exists at /Users/mkodi/Documents/University/Year 5/ECE 493/Lab 2/ECE493Lab2/frontend/src/
+- [X] T003 [P] Create UC-02 contract reference at /Users/mkodi/Documents/University/Year 5/ECE 493/Lab 2/ECE493Lab2/specs/002-view-registration-prices/contracts/uc-02-pricing.openapi.yaml (if not already present)
 
 ---
 
@@ -38,9 +38,9 @@ description: "Task list for UC-02 View Conference Registration Prices"
 
 **⚠️ CRITICAL**: No user story work can begin until this phase is complete
 
-- [ ] T004 Define backend response schemas for pricing in /Users/mkodi/Documents/University/Year 5/ECE 493/Lab 2/ECE493Lab2/backend/src/api/schemas/pricing.py
-- [ ] T005 [P] Define frontend response types for pricing in /Users/mkodi/Documents/University/Year 5/ECE 493/Lab 2/ECE493Lab2/frontend/src/services/pricing_types.ts
-- [ ] T006 Establish pricing message constants for UC-02 in /Users/mkodi/Documents/University/Year 5/ECE 493/Lab 2/ECE493Lab2/frontend/src/services/pricing_messages.ts
+- [X] T004 Define backend response schemas for pricing in /Users/mkodi/Documents/University/Year 5/ECE 493/Lab 2/ECE493Lab2/backend/src/api/schemas/pricing.py
+- [X] T005 [P] Define frontend response types for pricing in /Users/mkodi/Documents/University/Year 5/ECE 493/Lab 2/ECE493Lab2/frontend/src/services/pricing_types.ts
+- [X] T006 Establish pricing message constants for UC-02 in /Users/mkodi/Documents/University/Year 5/ECE 493/Lab 2/ECE493Lab2/frontend/src/services/pricing_messages.ts
 
 **Checkpoint**: Foundation ready - user story implementation can now begin
 
@@ -54,14 +54,14 @@ description: "Task list for UC-02 View Conference Registration Prices"
 
 ### Implementation for User Story 1
 
-- [ ] T007 [P] [US1] Create AttendanceType model in /Users/mkodi/Documents/University/Year 5/ECE 493/Lab 2/ECE493Lab2/backend/src/models/attendance_type.py
-- [ ] T008 [P] [US1] Create RegistrationPrice model in /Users/mkodi/Documents/University/Year 5/ECE 493/Lab 2/ECE493Lab2/backend/src/models/registration_price.py
-- [ ] T009 [US1] Implement pricing retrieval service in /Users/mkodi/Documents/University/Year 5/ECE 493/Lab 2/ECE493Lab2/backend/src/services/pricing_service.py (depends on T007, T008)
-- [ ] T010 [US1] Implement pricing API endpoint in /Users/mkodi/Documents/University/Year 5/ECE 493/Lab 2/ECE493Lab2/backend/src/api/pricing.py
-- [ ] T011 [P] [US1] Implement pricing client in /Users/mkodi/Documents/University/Year 5/ECE 493/Lab 2/ECE493Lab2/frontend/src/services/pricing_client.ts
-- [ ] T012 [P] [US1] Implement pricing UI component in /Users/mkodi/Documents/University/Year 5/ECE 493/Lab 2/ECE493Lab2/frontend/src/components/pricing_section.tsx
-- [ ] T013 [US1] Implement pricing page/section integration in /Users/mkodi/Documents/University/Year 5/ECE 493/Lab 2/ECE493Lab2/frontend/src/pages/pricing.tsx
-- [ ] T014 [US1] Handle UC-02 empty/partial/error messages in /Users/mkodi/Documents/University/Year 5/ECE 493/Lab 2/ECE493Lab2/frontend/src/pages/pricing.tsx
+- [X] T007 [P] [US1] Create AttendanceType model in /Users/mkodi/Documents/University/Year 5/ECE 493/Lab 2/ECE493Lab2/backend/src/models/attendance_type.py
+- [X] T008 [P] [US1] Create RegistrationPrice model in /Users/mkodi/Documents/University/Year 5/ECE 493/Lab 2/ECE493Lab2/backend/src/models/registration_price.py
+- [X] T009 [US1] Implement pricing retrieval service in /Users/mkodi/Documents/University/Year 5/ECE 493/Lab 2/ECE493Lab2/backend/src/services/pricing_service.py (depends on T007, T008)
+- [X] T010 [US1] Implement pricing API endpoint in /Users/mkodi/Documents/University/Year 5/ECE 493/Lab 2/ECE493Lab2/backend/src/api/pricing.py
+- [X] T011 [P] [US1] Implement pricing client in /Users/mkodi/Documents/University/Year 5/ECE 493/Lab 2/ECE493Lab2/frontend/src/services/pricing_client.ts
+- [X] T012 [P] [US1] Implement pricing UI component in /Users/mkodi/Documents/University/Year 5/ECE 493/Lab 2/ECE493Lab2/frontend/src/components/pricing_section.tsx
+- [X] T013 [US1] Implement pricing page/section integration in /Users/mkodi/Documents/University/Year 5/ECE 493/Lab 2/ECE493Lab2/frontend/src/pages/pricing.tsx
+- [X] T014 [US1] Handle UC-02 empty/partial/error messages in /Users/mkodi/Documents/University/Year 5/ECE 493/Lab 2/ECE493Lab2/frontend/src/pages/pricing.tsx
 
 **Checkpoint**: User Story 1 should be functional and independently testable
 
@@ -71,9 +71,9 @@ description: "Task list for UC-02 View Conference Registration Prices"
 
 **Purpose**: Improvements that affect multiple user stories
 
-- [ ] T015 [P] Validate success criteria traceability to AT-UC02-* in /Users/mkodi/Documents/University/Year 5/ECE 493/Lab 2/ECE493Lab2/specs/002-view-registration-prices/spec.md
-- [ ] T016 [P] Align quickstart steps with UC-02 flow in /Users/mkodi/Documents/University/Year 5/ECE 493/Lab 2/ECE493Lab2/specs/002-view-registration-prices/quickstart.md
-- [ ] T017 Validate contracts are consistent with behavior in /Users/mkodi/Documents/University/Year 5/ECE 493/Lab 2/ECE493Lab2/specs/002-view-registration-prices/contracts/uc-02-pricing.openapi.yaml
+- [X] T015 [P] Validate success criteria traceability to AT-UC02-* in /Users/mkodi/Documents/University/Year 5/ECE 493/Lab 2/ECE493Lab2/specs/002-view-registration-prices/spec.md
+- [X] T016 [P] Align quickstart steps with UC-02 flow in /Users/mkodi/Documents/University/Year 5/ECE 493/Lab 2/ECE493Lab2/specs/002-view-registration-prices/quickstart.md
+- [X] T017 Validate contracts are consistent with behavior in /Users/mkodi/Documents/University/Year 5/ECE 493/Lab 2/ECE493Lab2/specs/002-view-registration-prices/contracts/uc-02-pricing.openapi.yaml
 
 ---
 
