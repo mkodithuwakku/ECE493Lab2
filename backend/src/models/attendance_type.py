@@ -7,3 +7,4 @@ from dataclasses import dataclass
 class AttendanceType:
     id: str
     name: str
+    availability_status: str = "available"
