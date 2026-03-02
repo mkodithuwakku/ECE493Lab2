@@ -23,11 +23,11 @@ description: "Task list for UC-07 manuscript upload implementation"
 
 **Purpose**: Initialize shared modules used across manuscript upload stories
 
-- [ ] T001 Create manuscript upload service skeleton in backend/src/services/manuscript_upload_service.ts
-- [ ] T002 [P] Create file validation helper in backend/src/services/file_validation.ts
-- [ ] T003 [P] Create manuscript upload API client wrapper in frontend/src/services/manuscript_client.ts
-- [ ] T004 [P] Create upload logging utility in backend/src/services/upload_logger.ts
-- [ ] T005 [P] Create log redaction helper in backend/src/services/log_redactor.ts
+- [X] T001 Create manuscript upload service skeleton in backend/src/services/manuscript_upload_service.ts
+- [X] T002 [P] Create file validation helper in backend/src/services/file_validation.ts
+- [X] T003 [P] Create manuscript upload API client wrapper in frontend/src/services/manuscript_client.ts
+- [X] T004 [P] Create upload logging utility in backend/src/services/upload_logger.ts
+- [X] T005 [P] Create log redaction helper in backend/src/services/log_redactor.ts
 
 ---
 
@@ -37,11 +37,11 @@ description: "Task list for UC-07 manuscript upload implementation"
 
 **⚠️ CRITICAL**: No user story work can begin until this phase is complete
 
-- [ ] T006 Create submission repository abstraction in backend/src/services/submission_repository.ts
-- [ ] T007 [P] Create file storage service wrapper in backend/src/services/file_storage_service.ts
-- [ ] T008 [P] Create upload error mapper in backend/src/api/submissions/upload_error_mapper.ts
-- [ ] T009 Register manuscript upload route/controller in backend/src/api/submissions/manuscript_upload_controller.ts
-- [ ] T010 Ensure auth/authorization middleware protects upload endpoint in backend/src/api/submissions/manuscript_upload_controller.ts
+- [X] T006 Create submission repository abstraction in backend/src/services/submission_repository.ts
+- [X] T007 [P] Create file storage service wrapper in backend/src/services/file_storage_service.ts
+- [X] T008 [P] Create upload error mapper in backend/src/api/submissions/upload_error_mapper.ts
+- [X] T009 Register manuscript upload route/controller in backend/src/api/submissions/manuscript_upload_controller.ts
+- [X] T010 Ensure auth/authorization middleware protects upload endpoint in backend/src/api/submissions/manuscript_upload_controller.ts
 
 **Checkpoint**: Foundation ready - user story implementation can now begin
 
@@ -55,11 +55,11 @@ description: "Task list for UC-07 manuscript upload implementation"
 
 ### Implementation for User Story 1
 
-- [ ] T011 [US1] Implement validation + storage + association in backend/src/services/manuscript_upload_service.ts
-- [ ] T012 [US1] Integrate structured logging + redaction in backend/src/services/manuscript_upload_service.ts
-- [ ] T013 [US1] Implement success response in backend/src/api/submissions/manuscript_upload_controller.ts
-- [ ] T014 [P] [US1] Implement upload UI submit + success handling in frontend/src/pages/ManuscriptUploadPage.tsx
-- [ ] T015 [US1] Wire upload API call in frontend/src/services/manuscript_client.ts
+- [X] T011 [US1] Implement validation + storage + association in backend/src/services/manuscript_upload_service.ts
+- [X] T012 [US1] Integrate structured logging + redaction in backend/src/services/manuscript_upload_service.ts
+- [X] T013 [US1] Implement success response in backend/src/api/submissions/manuscript_upload_controller.ts
+- [X] T014 [P] [US1] Implement upload UI submit + success handling in frontend/src/pages/ManuscriptUploadPage.tsx
+- [X] T015 [US1] Wire upload API call in frontend/src/services/manuscript_client.ts
 
 **Checkpoint**: User Story 1 is independently functional
 
@@ -73,9 +73,9 @@ description: "Task list for UC-07 manuscript upload implementation"
 
 ### Implementation for User Story 2
 
-- [ ] T016 [US2] Add unsupported-format validation in backend/src/services/file_validation.ts
-- [ ] T017 [US2] Return unsupported-format error in backend/src/api/submissions/manuscript_upload_controller.ts
-- [ ] T018 [P] [US2] Display unsupported-format error in frontend/src/pages/ManuscriptUploadPage.tsx
+- [X] T016 [US2] Add unsupported-format validation in backend/src/services/file_validation.ts
+- [X] T017 [US2] Return unsupported-format error in backend/src/api/submissions/manuscript_upload_controller.ts
+- [X] T018 [P] [US2] Display unsupported-format error in frontend/src/pages/ManuscriptUploadPage.tsx
 
 **Checkpoint**: User Story 2 is independently functional
 
@@ -89,9 +89,9 @@ description: "Task list for UC-07 manuscript upload implementation"
 
 ### Implementation for User Story 3
 
-- [ ] T019 [US3] Add size limit validation in backend/src/services/file_validation.ts
-- [ ] T020 [US3] Return size restriction error in backend/src/api/submissions/manuscript_upload_controller.ts
-- [ ] T021 [P] [US3] Display size restriction error in frontend/src/pages/ManuscriptUploadPage.tsx
+- [X] T019 [US3] Add size limit validation in backend/src/services/file_validation.ts
+- [X] T020 [US3] Return size restriction error in backend/src/api/submissions/manuscript_upload_controller.ts
+- [X] T021 [P] [US3] Display size restriction error in frontend/src/pages/ManuscriptUploadPage.tsx
 
 **Checkpoint**: User Story 3 is independently functional
 
@@ -105,9 +105,9 @@ description: "Task list for UC-07 manuscript upload implementation"
 
 ### Implementation for User Story 4
 
-- [ ] T022 [US4] Detect upload interruption in backend/src/services/manuscript_upload_service.ts
-- [ ] T023 [US4] Return interruption error in backend/src/api/submissions/manuscript_upload_controller.ts
-- [ ] T024 [P] [US4] Display interruption error and retry option in frontend/src/pages/ManuscriptUploadPage.tsx
+- [X] T022 [US4] Detect upload interruption in backend/src/services/manuscript_upload_service.ts
+- [X] T023 [US4] Return interruption error in backend/src/api/submissions/manuscript_upload_controller.ts
+- [X] T024 [P] [US4] Display interruption error and retry option in frontend/src/pages/ManuscriptUploadPage.tsx
 
 **Checkpoint**: User Story 4 is independently functional
 
@@ -121,9 +121,9 @@ description: "Task list for UC-07 manuscript upload implementation"
 
 ### Implementation for User Story 5
 
-- [ ] T025 [US5] Map storage failure to error in backend/src/services/manuscript_upload_service.ts
-- [ ] T026 [US5] Return storage failure response in backend/src/api/submissions/manuscript_upload_controller.ts
-- [ ] T027 [P] [US5] Display storage failure message in frontend/src/pages/ManuscriptUploadPage.tsx
+- [X] T025 [US5] Map storage failure to error in backend/src/services/manuscript_upload_service.ts
+- [X] T026 [US5] Return storage failure response in backend/src/api/submissions/manuscript_upload_controller.ts
+- [X] T027 [P] [US5] Display storage failure message in frontend/src/pages/ManuscriptUploadPage.tsx
 
 **Checkpoint**: User Story 5 is independently functional
 
@@ -133,8 +133,8 @@ description: "Task list for UC-07 manuscript upload implementation"
 
 **Purpose**: Finish cross-cutting updates and documentation alignment
 
-- [ ] T028 [P] Align API contract in /Users/mkodi/Documents/University/Year 5/ECE 493/Lab 2/ECE493Lab2/specs/007-upload-paper-manuscript/contracts/uc-07-manuscript-upload.openapi.yaml
-- [ ] T029 [P] Update quickstart notes for upload error handling in /Users/mkodi/Documents/University/Year 5/ECE 493/Lab 2/ECE493Lab2/specs/007-upload-paper-manuscript/quickstart.md
+- [X] T028 [P] Align API contract in /Users/mkodi/Documents/University/Year 5/ECE 493/Lab 2/ECE493Lab2/specs/007-upload-paper-manuscript/contracts/uc-07-manuscript-upload.openapi.yaml
+- [X] T029 [P] Update quickstart notes for upload error handling in /Users/mkodi/Documents/University/Year 5/ECE 493/Lab 2/ECE493Lab2/specs/007-upload-paper-manuscript/quickstart.md
 
 ---
 

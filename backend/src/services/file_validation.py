@@ -4,7 +4,7 @@ from dataclasses import dataclass
 from typing import Tuple
 
 SUPPORTED_EXTENSIONS = {".pdf", ".doc", ".docx", ".tex"}
-MAX_UPLOAD_BYTES = 20 * 1024 * 1024
+MAX_UPLOAD_BYTES = 50 * 1024 * 1024
 
 
 @dataclass(frozen=True)
@@ -25,7 +25,7 @@ def validate_file(filename: str, size_bytes: int) -> FileValidationResult:
     if size_bytes > MAX_UPLOAD_BYTES:
         return FileValidationResult(
             valid=False,
-            message="File exceeds maximum size of 20 MB.",
+            message="File exceeds maximum size of 50 MB.",
         )
 
     return FileValidationResult(valid=True)
