@@ -17,9 +17,10 @@ Validate the UC-03 registration flow for new users.
 6. Validate alternate/error states by preparing the system state and resubmitting:
    - Invalid or incomplete fields show validation errors and allow correction.
      (AT-UC03-02)
-   - Duplicate email shows an "already registered" message and no account is created.
+   - Duplicate email shows "Email is already registered." and no account is created.
      (AT-UC03-03)
-   - Invalid password shows requirement guidance and allows correction.
+   - Invalid password shows "Password must be at least 8 characters and include a non-letter character."
+     and allows correction.
      (AT-UC03-04)
-   - Storage failure shows a registration failure message and no account is created.
+   - Storage failure shows "Registration failed. Please try again." and no account is created.
      (AT-UC03-05)

@@ -26,9 +26,9 @@ description: "Task list for UC-03 Register a New User Account"
 
 **Purpose**: Project initialization and basic structure
 
-- [ ] T001 Confirm backend structure exists at /Users/mkodi/Documents/University/Year 5/ECE 493/Lab 2/ECE493Lab2/backend/src/
-- [ ] T002 Confirm frontend structure exists at /Users/mkodi/Documents/University/Year 5/ECE 493/Lab 2/ECE493Lab2/frontend/src/
-- [ ] T003 [P] Create UC-03 contract reference at /Users/mkodi/Documents/University/Year 5/ECE 493/Lab 2/ECE493Lab2/specs/003-register-user-account/contracts/uc-03-registration.openapi.yaml (if not already present)
+- [X] T001 Confirm backend structure exists at /Users/mkodi/Documents/University/Year 5/ECE 493/Lab 2/ECE493Lab2/backend/src/
+- [X] T002 Confirm frontend structure exists at /Users/mkodi/Documents/University/Year 5/ECE 493/Lab 2/ECE493Lab2/frontend/src/
+- [X] T003 [P] Create UC-03 contract reference at /Users/mkodi/Documents/University/Year 5/ECE 493/Lab 2/ECE493Lab2/specs/003-register-user-account/contracts/uc-03-registration.openapi.yaml (if not already present)
 
 ---
 
@@ -38,9 +38,9 @@ description: "Task list for UC-03 Register a New User Account"
 
 **⚠️ CRITICAL**: No user story work can begin until this phase is complete
 
-- [ ] T004 Define backend request/response schemas for registration in /Users/mkodi/Documents/University/Year 5/ECE 493/Lab 2/ECE493Lab2/backend/src/api/schemas/registration.py
-- [ ] T005 [P] Define frontend request/response types for registration in /Users/mkodi/Documents/University/Year 5/ECE 493/Lab 2/ECE493Lab2/frontend/src/services/registration_types.ts
-- [ ] T006 Establish registration message constants for UC-03 in /Users/mkodi/Documents/University/Year 5/ECE 493/Lab 2/ECE493Lab2/frontend/src/services/registration_messages.ts
+- [X] T004 Define backend request/response schemas for registration in /Users/mkodi/Documents/University/Year 5/ECE 493/Lab 2/ECE493Lab2/backend/src/api/schemas/registration.py
+- [X] T005 [P] Define frontend request/response types for registration in /Users/mkodi/Documents/University/Year 5/ECE 493/Lab 2/ECE493Lab2/frontend/src/services/registration_types.ts
+- [X] T006 Establish registration message constants for UC-03 in /Users/mkodi/Documents/University/Year 5/ECE 493/Lab 2/ECE493Lab2/frontend/src/services/registration_messages.ts
 
 **Checkpoint**: Foundation ready - user story implementation can now begin
 
@@ -57,16 +57,16 @@ without creating an account.
 
 ### Implementation for User Story 1
 
-- [ ] T007 [P] [US1] Create UserAccount model in /Users/mkodi/Documents/University/Year 5/ECE 493/Lab 2/ECE493Lab2/backend/src/models/user_account.py
-- [ ] T008 [US1] Implement registration validation rules in /Users/mkodi/Documents/University/Year 5/ECE 493/Lab 2/ECE493Lab2/backend/src/services/registration_validation.py
-- [ ] T009 [US1] Implement password hashing on account creation in /Users/mkodi/Documents/University/Year 5/ECE 493/Lab 2/ECE493Lab2/backend/src/services/registration_service.py
-- [ ] T010 [US1] Implement registration service in /Users/mkodi/Documents/University/Year 5/ECE 493/Lab 2/ECE493Lab2/backend/src/services/registration_service.py (depends on T007, T008, T009)
-- [ ] T011 [US1] Implement registration API endpoint in /Users/mkodi/Documents/University/Year 5/ECE 493/Lab 2/ECE493Lab2/backend/src/api/registration.py
-- [ ] T012 [P] [US1] Implement registration client in /Users/mkodi/Documents/University/Year 5/ECE 493/Lab 2/ECE493Lab2/frontend/src/services/registration_client.ts
-- [ ] T013 [P] [US1] Implement registration form component in /Users/mkodi/Documents/University/Year 5/ECE 493/Lab 2/ECE493Lab2/frontend/src/components/registration_form.tsx
-- [ ] T014 [US1] Implement registration page integration in /Users/mkodi/Documents/University/Year 5/ECE 493/Lab 2/ECE493Lab2/frontend/src/pages/register.tsx
-- [ ] T015 [US1] Handle UC-03 validation/duplicate/password/storage error messaging in /Users/mkodi/Documents/University/Year 5/ECE 493/Lab 2/ECE493Lab2/frontend/src/pages/register.tsx
-- [ ] T016 [US1] Implement redirect to login on successful registration in /Users/mkodi/Documents/University/Year 5/ECE 493/Lab 2/ECE493Lab2/frontend/src/pages/register.tsx
+- [X] T007 [P] [US1] Create UserAccount model in /Users/mkodi/Documents/University/Year 5/ECE 493/Lab 2/ECE493Lab2/backend/src/models/user_account.py
+- [X] T008 [US1] Implement registration validation rules in /Users/mkodi/Documents/University/Year 5/ECE 493/Lab 2/ECE493Lab2/backend/src/services/registration_validation.py
+- [X] T009 [US1] Implement password hashing on account creation in /Users/mkodi/Documents/University/Year 5/ECE 493/Lab 2/ECE493Lab2/backend/src/services/registration_service.py
+- [X] T010 [US1] Implement registration service in /Users/mkodi/Documents/University/Year 5/ECE 493/Lab 2/ECE493Lab2/backend/src/services/registration_service.py (depends on T007, T008, T009)
+- [X] T011 [US1] Implement registration API endpoint in /Users/mkodi/Documents/University/Year 5/ECE 493/Lab 2/ECE493Lab2/backend/src/api/registration.py
+- [X] T012 [P] [US1] Implement registration client in /Users/mkodi/Documents/University/Year 5/ECE 493/Lab 2/ECE493Lab2/frontend/src/services/registration_client.ts
+- [X] T013 [P] [US1] Implement registration form component in /Users/mkodi/Documents/University/Year 5/ECE 493/Lab 2/ECE493Lab2/frontend/src/components/registration_form.tsx
+- [X] T014 [US1] Implement registration page integration in /Users/mkodi/Documents/University/Year 5/ECE 493/Lab 2/ECE493Lab2/frontend/src/pages/register.tsx
+- [X] T015 [US1] Handle UC-03 validation/duplicate/password/storage error messaging in /Users/mkodi/Documents/University/Year 5/ECE 493/Lab 2/ECE493Lab2/frontend/src/pages/register.tsx
+- [X] T016 [US1] Implement redirect to login on successful registration in /Users/mkodi/Documents/University/Year 5/ECE 493/Lab 2/ECE493Lab2/frontend/src/pages/register.tsx
 
 **Checkpoint**: User Story 1 should be functional and independently testable
 
@@ -76,8 +76,8 @@ without creating an account.
 
 **Purpose**: Improvements that affect multiple user stories
 
-- [ ] T017 [P] Align quickstart steps with UC-03 flow in /Users/mkodi/Documents/University/Year 5/ECE 493/Lab 2/ECE493Lab2/specs/003-register-user-account/quickstart.md
-- [ ] T018 Validate contracts are consistent with behavior in /Users/mkodi/Documents/University/Year 5/ECE 493/Lab 2/ECE493Lab2/specs/003-register-user-account/contracts/uc-03-registration.openapi.yaml
+- [X] T017 [P] Align quickstart steps with UC-03 flow in /Users/mkodi/Documents/University/Year 5/ECE 493/Lab 2/ECE493Lab2/specs/003-register-user-account/quickstart.md
+- [X] T018 Validate contracts are consistent with behavior in /Users/mkodi/Documents/University/Year 5/ECE 493/Lab 2/ECE493Lab2/specs/003-register-user-account/contracts/uc-03-registration.openapi.yaml
 
 ---
 
