@@ -26,9 +26,9 @@ description: "Task list for UC-01 View Public Conference Information"
 
 **Purpose**: Project initialization and basic structure
 
-- [ ] T001 Confirm backend structure exists at /Users/mkodi/Documents/University/Year 5/ECE 493/Lab 2/ECE493Lab2/backend/src/
-- [ ] T002 Confirm frontend structure exists at /Users/mkodi/Documents/University/Year 5/ECE 493/Lab 2/ECE493Lab2/frontend/src/
-- [ ] T003 [P] Create UC-01 contract reference at /Users/mkodi/Documents/University/Year 5/ECE 493/Lab 2/ECE493Lab2/specs/001-view-public-info/contracts/uc-01-public-info.openapi.yaml (if not already present)
+- [X] T001 Confirm backend structure exists at /Users/mkodi/Documents/University/Year 5/ECE 493/Lab 2/ECE493Lab2/backend/src/
+- [X] T002 Confirm frontend structure exists at /Users/mkodi/Documents/University/Year 5/ECE 493/Lab 2/ECE493Lab2/frontend/src/
+- [X] T003 [P] Create UC-01 contract reference at /Users/mkodi/Documents/University/Year 5/ECE 493/Lab 2/ECE493Lab2/specs/001-view-public-info/contracts/uc-01-public-info.openapi.yaml (if not already present)
 
 ---
 
@@ -38,9 +38,9 @@ description: "Task list for UC-01 View Public Conference Information"
 
 **⚠️ CRITICAL**: No user story work can begin until this phase is complete
 
-- [ ] T004 Define backend response schemas for public info in /Users/mkodi/Documents/University/Year 5/ECE 493/Lab 2/ECE493Lab2/backend/src/api/schemas/public_info.py
-- [ ] T005 [P] Define frontend response types for public info in /Users/mkodi/Documents/University/Year 5/ECE 493/Lab 2/ECE493Lab2/frontend/src/services/public_info_types.ts
-- [ ] T006 Establish error message constants for UC-01 in /Users/mkodi/Documents/University/Year 5/ECE 493/Lab 2/ECE493Lab2/frontend/src/services/public_info_messages.ts
+- [X] T004 Define backend response schemas for public info in /Users/mkodi/Documents/University/Year 5/ECE 493/Lab 2/ECE493Lab2/backend/src/api/schemas/public_info.py
+- [X] T005 [P] Define frontend response types for public info in /Users/mkodi/Documents/University/Year 5/ECE 493/Lab 2/ECE493Lab2/frontend/src/services/public_info_types.ts
+- [X] T006 Establish error message constants for UC-01 in /Users/mkodi/Documents/University/Year 5/ECE 493/Lab 2/ECE493Lab2/frontend/src/services/public_info_messages.ts
 
 **Checkpoint**: Foundation ready - user story implementation can now begin
 
@@ -54,14 +54,14 @@ description: "Task list for UC-01 View Public Conference Information"
 
 ### Implementation for User Story 1
 
-- [ ] T007 [P] [US1] Create PublicAnnouncement model in /Users/mkodi/Documents/University/Year 5/ECE 493/Lab 2/ECE493Lab2/backend/src/models/public_announcement.py
-- [ ] T008 [P] [US1] Create PublicConferenceInformation model in /Users/mkodi/Documents/University/Year 5/ECE 493/Lab 2/ECE493Lab2/backend/src/models/public_conference_information.py
-- [ ] T009 [US1] Implement public info retrieval service in /Users/mkodi/Documents/University/Year 5/ECE 493/Lab 2/ECE493Lab2/backend/src/services/public_info_service.py (depends on T007, T008)
-- [ ] T010 [US1] Implement public homepage API endpoint in /Users/mkodi/Documents/University/Year 5/ECE 493/Lab 2/ECE493Lab2/backend/src/api/public_info.py
-- [ ] T011 [P] [US1] Implement public info client in /Users/mkodi/Documents/University/Year 5/ECE 493/Lab 2/ECE493Lab2/frontend/src/services/public_info_client.ts
-- [ ] T012 [P] [US1] Implement public info UI component in /Users/mkodi/Documents/University/Year 5/ECE 493/Lab 2/ECE493Lab2/frontend/src/components/public_info_section.tsx
-- [ ] T013 [US1] Implement homepage integration in /Users/mkodi/Documents/University/Year 5/ECE 493/Lab 2/ECE493Lab2/frontend/src/pages/homepage.tsx
-- [ ] T014 [US1] Handle UC-01 empty/partial/error messages in /Users/mkodi/Documents/University/Year 5/ECE 493/Lab 2/ECE493Lab2/frontend/src/pages/homepage.tsx
+- [X] T007 [P] [US1] Create PublicAnnouncement model in /Users/mkodi/Documents/University/Year 5/ECE 493/Lab 2/ECE493Lab2/backend/src/models/public_announcement.py
+- [X] T008 [P] [US1] Create PublicConferenceInformation model in /Users/mkodi/Documents/University/Year 5/ECE 493/Lab 2/ECE493Lab2/backend/src/models/public_conference_information.py
+- [X] T009 [US1] Implement public info retrieval service in /Users/mkodi/Documents/University/Year 5/ECE 493/Lab 2/ECE493Lab2/backend/src/services/public_info_service.py (depends on T007, T008)
+- [X] T010 [US1] Implement public homepage API endpoint in /Users/mkodi/Documents/University/Year 5/ECE 493/Lab 2/ECE493Lab2/backend/src/api/public_info.py
+- [X] T011 [P] [US1] Implement public info client in /Users/mkodi/Documents/University/Year 5/ECE 493/Lab 2/ECE493Lab2/frontend/src/services/public_info_client.ts
+- [X] T012 [P] [US1] Implement public info UI component in /Users/mkodi/Documents/University/Year 5/ECE 493/Lab 2/ECE493Lab2/frontend/src/components/public_info_section.tsx
+- [X] T013 [US1] Implement homepage integration in /Users/mkodi/Documents/University/Year 5/ECE 493/Lab 2/ECE493Lab2/frontend/src/pages/homepage.tsx
+- [X] T014 [US1] Handle UC-01 empty/partial/error messages in /Users/mkodi/Documents/University/Year 5/ECE 493/Lab 2/ECE493Lab2/frontend/src/pages/homepage.tsx
 
 **Checkpoint**: User Story 1 should be functional and independently testable
 
@@ -71,8 +71,8 @@ description: "Task list for UC-01 View Public Conference Information"
 
 **Purpose**: Improvements that affect multiple user stories
 
-- [ ] T015 [P] Align quickstart steps with UC-01 flow in /Users/mkodi/Documents/University/Year 5/ECE 493/Lab 2/ECE493Lab2/specs/001-view-public-info/quickstart.md
-- [ ] T016 Validate contracts are consistent with behavior in /Users/mkodi/Documents/University/Year 5/ECE 493/Lab 2/ECE493Lab2/specs/001-view-public-info/contracts/uc-01-public-info.openapi.yaml
+- [X] T015 [P] Align quickstart steps with UC-01 flow in /Users/mkodi/Documents/University/Year 5/ECE 493/Lab 2/ECE493Lab2/specs/001-view-public-info/quickstart.md
+- [X] T016 Validate contracts are consistent with behavior in /Users/mkodi/Documents/University/Year 5/ECE 493/Lab 2/ECE493Lab2/specs/001-view-public-info/contracts/uc-01-public-info.openapi.yaml
 
 ---
 
