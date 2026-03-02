@@ -1,0 +1,91 @@
+openapi: 3.0.3
+info:
+  title: UC-06 Manuscript Upload
+  version: 1.0.0
+paths:
+  /submissions/{submissionId}/manuscript:
+    post:
+      summary: Upload a manuscript file for a paper submission
+      parameters:
+        - in: path
+          name: submissionId
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              required:
+                - file
+              properties:
+                file:
+                  type: string
+                  format: binary
+      responses:
+        "200":
+          description: Upload successful
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/UploadSuccess"
+        "400":
+          description: Invalid request or validation error
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ValidationError"
+        "415":
+          description: Unsupported file format
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/MessageResponse"
+        "413":
+          description: File exceeds maximum size
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/MessageResponse"
+        "499":
+          description: Upload interrupted by client
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/MessageResponse"
+        "500":
+          description: Storage failure
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/MessageResponse"
+components:
+  schemas:
+    UploadSuccess:
+      type: object
+      required:
+        - message
+        - file_id
+      properties:
+        message:
+          type: string
+        file_id:
+          type: string
+    ValidationError:
+      type: object
+      required:
+        - errors
+      properties:
+        errors:
+          type: array
+          items:
+            type: string
+    MessageResponse:
+      type: object
+      required:
+        - message
+      properties:
+        message:
+          type: string

@@ -1,0 +1,34 @@
+openapi: 3.0.3
+info:
+  title: UC-17 Reviewer Assignment Limit API
+  version: 1.0.0
+paths:
+  /papers/{paperId}/reviewers/limit-check:
+    post:
+      summary: Enforce reviewer assignment limits
+      description: Checks reviewer assignment count against limit and allows or blocks assignment.
+      parameters:
+        - name: paperId
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                reviewerId:
+                  type: string
+              required: [reviewerId]
+      responses:
+        "200":
+          description: Assignment allowed and count updated
+        "409":
+          description: Reviewer at assignment limit
+        "422":
+          description: Assignment cannot be completed at this time
+        "500":
+          description: Assignment could not be completed

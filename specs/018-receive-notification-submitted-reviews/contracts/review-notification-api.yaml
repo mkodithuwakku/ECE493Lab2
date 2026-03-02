@@ -1,0 +1,84 @@
+openapi: 3.0.3
+info:
+  title: UC-18 Review Notification API
+  version: 1.0.0
+paths:
+  /editor/notifications/reviews:
+    get:
+      summary: Get review submission notifications for editor
+      description: Returns notifications about submitted reviews for the authenticated editor.
+      responses:
+        "200":
+          description: Notifications returned
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  notifications:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        notificationId:
+                          type: string
+                        paperId:
+                          type: string
+                        type:
+                          type: string
+                          enum: [review_submitted]
+                        createdAt:
+                          type: string
+                          format: date-time
+                      required: [notificationId, paperId, type, createdAt]
+                required: [notifications]
+        "401":
+          description: User is not authenticated
+        "403":
+          description: User is not authorized to view these notifications
+        "503":
+          description: Notifications cannot be retrieved due to system error
+  /papers/{paperId}/reviews/status:
+    get:
+      summary: Get review status for a paper
+      description: Returns review status and permitted review details for the specified paper when accessed by an authorized editor.
+      parameters:
+        - name: paperId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: Review status returned
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  paperId:
+                    type: string
+                  reviewsReceived:
+                    type: integer
+                  reviewersAssigned:
+                    type: integer
+                  reviewDetails:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        reviewerId:
+                          type: string
+                        submittedAt:
+                          type: string
+                          format: date-time
+                        contentSummary:
+                          type: string
+                      required: [reviewerId, submittedAt]
+                required: [paperId, reviewsReceived, reviewersAssigned]
+        "401":
+          description: User is not authenticated
+        "403":
+          description: User is not authorized to view this paper
+        "503":
+          description: Review status cannot be retrieved due to system error

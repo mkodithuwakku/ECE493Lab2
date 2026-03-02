@@ -1,0 +1,102 @@
+openapi: 3.0.3
+info:
+  title: UC-19 Final Decision API
+  version: 1.0.0
+paths:
+  /papers/{paperId}/decision:
+    post:
+      summary: Record final decision for a paper
+      description: Records an accept or reject decision when all required reviews are complete.
+      parameters:
+        - name: paperId
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                decisionValue:
+                  type: string
+                  enum: [accept, reject]
+              required: [decisionValue]
+      responses:
+        "200":
+          description: Decision recorded successfully
+        "400":
+          description: Reviews incomplete or invalid request
+        "401":
+          description: User is not authenticated
+        "403":
+          description: User is not authorized to make a decision
+        "409":
+          description: Decision already recorded and locked
+        "500":
+          description: Decision could not be stored
+  /papers/{paperId}/decision:
+    get:
+      summary: Get decision status for a paper (author view)
+      description: Returns the recorded decision for the authenticated author.
+      parameters:
+        - name: paperId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: Decision status returned
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  paperId:
+                    type: string
+                  decisionStatus:
+                    type: string
+                    enum: [undecided, accepted, rejected]
+                required: [paperId, decisionStatus]
+        "401":
+          description: User is not authenticated
+        "403":
+          description: User is not authorized to view this decision
+        "503":
+          description: Decision data unavailable due to system error
+  /papers/{paperId}/decision/review-requests:
+    post:
+      summary: Request additional reviews for a paper
+      description: Creates additional review requests instead of a final decision.
+      parameters:
+        - name: paperId
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                reviewerIds:
+                  type: array
+                  items:
+                    type: string
+              required: [reviewerIds]
+      responses:
+        "200":
+          description: Additional reviews requested
+        "400":
+          description: Invalid request
+        "401":
+          description: User is not authenticated
+        "403":
+          description: User is not authorized to request reviews
+        "500":
+          description: Review request could not be recorded

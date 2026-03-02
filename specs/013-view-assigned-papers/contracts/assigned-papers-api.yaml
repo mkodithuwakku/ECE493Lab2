@@ -1,0 +1,30 @@
+openapi: 3.0.3
+info:
+  title: UC-13 Assigned Papers API
+  version: 1.0.0
+paths:
+  /assigned-papers:
+    get:
+      summary: List assigned papers for reviewer
+      description: Returns the list of papers assigned to the authenticated reviewer.
+      responses:
+        "200":
+          description: Assigned papers returned
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    paperId:
+                      type: string
+                    title:
+                      type: string
+                  required: [paperId]
+        "401":
+          description: User is not authenticated
+        "403":
+          description: User is not authorized
+        "500":
+          description: Assigned papers could not be retrieved

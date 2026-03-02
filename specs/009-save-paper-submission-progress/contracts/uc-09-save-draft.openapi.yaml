@@ -1,0 +1,77 @@
+openapi: 3.0.3
+info:
+  title: UC-09 Save Submission Draft API
+  version: 1.0.0
+  description: Save current paper submission progress as a draft.
+paths:
+  /submissions/{submissionId}/draft:
+    post:
+      summary: Save submission draft
+      description: Validate and store current submission state as a draft.
+      parameters:
+        - name: submissionId
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                data:
+                  type: object
+                saveAnyway:
+                  type: boolean
+              required:
+                - data
+      responses:
+        "200":
+          description: Draft saved
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  submissionId:
+                    type: string
+                  status:
+                    type: string
+                    description: complete or incomplete
+                  message:
+                    type: string
+        "400":
+          description: Validation error (invalid data)
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+                  message:
+                    type: string
+        "409":
+          description: Missing minimum fields; warning and save/cancel decision needed
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+                  message:
+                    type: string
+        "500":
+          description: Storage failure
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+                  message:
+                    type: string
