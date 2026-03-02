@@ -23,9 +23,9 @@ description: "Task list for UC-04 login implementation"
 
 **Purpose**: Initialize shared modules used across login stories
 
-- [ ] T001 Create auth limits configuration in backend/src/config/auth_limits.ts
-- [ ] T002 [P] Create auth logging utility in backend/src/services/auth_logger.ts
-- [ ] T003 [P] Create login API client wrapper in frontend/src/services/auth_client.ts
+- [X] T001 Create auth limits configuration in backend/src/config/auth_limits.ts
+- [X] T002 [P] Create auth logging utility in backend/src/services/auth_logger.ts
+- [X] T003 [P] Create login API client wrapper in frontend/src/services/auth_client.ts
 
 ---
 
@@ -35,11 +35,11 @@ description: "Task list for UC-04 login implementation"
 
 **⚠️ CRITICAL**: No user story work can begin until this phase is complete
 
-- [ ] T004 Create user account repository abstraction in backend/src/services/user_account_repository.ts
-- [ ] T005 [P] Create session manager helper in backend/src/services/session_manager.ts
-- [ ] T006 [P] Create identifier normalization helper in backend/src/services/identifier_normalizer.ts
-- [ ] T007 Create lockout policy helper in backend/src/services/lockout_policy.ts
-- [ ] T008 Create error-to-response mapper in backend/src/api/login/login_error_mapper.ts
+- [X] T004 Create user account repository abstraction in backend/src/services/user_account_repository.ts
+- [X] T005 [P] Create session manager helper in backend/src/services/session_manager.ts
+- [X] T006 [P] Create identifier normalization helper in backend/src/services/identifier_normalizer.ts
+- [X] T007 Create lockout policy helper in backend/src/services/lockout_policy.ts
+- [X] T008 Create error-to-response mapper in backend/src/api/login/login_error_mapper.ts
 
 **Checkpoint**: Foundation ready - user story implementation can now begin
 
@@ -53,11 +53,11 @@ description: "Task list for UC-04 login implementation"
 
 ### Implementation for User Story 1
 
-- [ ] T009 [US1] Implement success-path authentication in backend/src/services/auth_service.ts
-- [ ] T010 [US1] Implement login controller success response in backend/src/api/login/login_controller.ts
-- [ ] T011 [P] [US1] Implement login form submit + redirect flow in frontend/src/pages/LoginPage.tsx
-- [ ] T012 [P] [US1] Register login route and redirect target in frontend/src/routes.tsx
-- [ ] T013 [US1] Wire login API call in frontend/src/services/auth_client.ts
+- [X] T009 [US1] Implement success-path authentication in backend/src/services/auth_service.ts
+- [X] T010 [US1] Implement login controller success response in backend/src/api/login/login_controller.ts
+- [X] T011 [P] [US1] Implement login form submit + redirect flow in frontend/src/pages/LoginPage.tsx
+- [X] T012 [P] [US1] Register login route and redirect target in frontend/src/routes.tsx
+- [X] T013 [US1] Wire login API call in frontend/src/services/auth_client.ts
 
 **Checkpoint**: User Story 1 is independently functional
 
@@ -71,8 +71,8 @@ description: "Task list for UC-04 login implementation"
 
 ### Implementation for User Story 2
 
-- [ ] T014 [US2] Add required-field validation in backend/src/api/login/login_controller.ts
-- [ ] T015 [P] [US2] Add required-field messaging in frontend/src/pages/LoginPage.tsx
+- [X] T014 [US2] Add required-field validation in backend/src/api/login/login_controller.ts
+- [X] T015 [P] [US2] Add required-field messaging in frontend/src/pages/LoginPage.tsx
 
 **Checkpoint**: User Story 2 is independently functional
 
@@ -86,9 +86,9 @@ description: "Task list for UC-04 login implementation"
 
 ### Implementation for User Story 3
 
-- [ ] T016 [US3] Add failed-attempt tracking + remaining attempts in backend/src/services/auth_service.ts
-- [ ] T017 [US3] Return 401 InvalidCredentials with remaining_attempts in backend/src/api/login/login_controller.ts
-- [ ] T018 [P] [US3] Display remaining-attempts messaging in frontend/src/pages/LoginPage.tsx
+- [X] T016 [US3] Add failed-attempt tracking + remaining attempts in backend/src/services/auth_service.ts
+- [X] T017 [US3] Return 401 InvalidCredentials with remaining_attempts in backend/src/api/login/login_controller.ts
+- [X] T018 [P] [US3] Display remaining-attempts messaging in frontend/src/pages/LoginPage.tsx
 
 **Checkpoint**: User Story 3 is independently functional
 
@@ -102,9 +102,9 @@ description: "Task list for UC-04 login implementation"
 
 ### Implementation for User Story 4
 
-- [ ] T019 [US4] Enforce locked/disabled checks in backend/src/services/auth_service.ts
-- [ ] T020 [US4] Return 403 AccountStatusError in backend/src/api/login/login_controller.ts
-- [ ] T021 [P] [US4] Display account inactive message in frontend/src/pages/LoginPage.tsx
+- [X] T019 [US4] Enforce locked/disabled checks in backend/src/services/auth_service.ts
+- [X] T020 [US4] Return 403 AccountStatusError in backend/src/api/login/login_controller.ts
+- [X] T021 [P] [US4] Display account inactive message in frontend/src/pages/LoginPage.tsx
 
 **Checkpoint**: User Story 4 is independently functional
 
@@ -118,9 +118,9 @@ description: "Task list for UC-04 login implementation"
 
 ### Implementation for User Story 5
 
-- [ ] T022 [US5] Map service/database outage to service_unavailable in backend/src/services/auth_service.ts
-- [ ] T023 [US5] Return 503 MessageResponse in backend/src/api/login/login_controller.ts
-- [ ] T024 [P] [US5] Display temporary system issue message in frontend/src/pages/LoginPage.tsx
+- [X] T022 [US5] Map service/database outage to service_unavailable in backend/src/services/auth_service.ts
+- [X] T023 [US5] Return 503 MessageResponse in backend/src/api/login/login_controller.ts
+- [X] T024 [P] [US5] Display temporary system issue message in frontend/src/pages/LoginPage.tsx
 
 **Checkpoint**: User Story 5 is independently functional
 
@@ -134,9 +134,9 @@ description: "Task list for UC-04 login implementation"
 
 ### Implementation for User Story 6
 
-- [ ] T025 [US6] Add critical error handling path in backend/src/services/auth_service.ts
-- [ ] T026 [US6] Return 500 MessageResponse in backend/src/api/login/login_controller.ts
-- [ ] T027 [P] [US6] Display "authentication cannot be completed" message in frontend/src/pages/LoginPage.tsx
+- [X] T025 [US6] Add critical error handling path in backend/src/services/auth_service.ts
+- [X] T026 [US6] Return 500 MessageResponse in backend/src/api/login/login_controller.ts
+- [X] T027 [P] [US6] Display "authentication cannot be completed" message in frontend/src/pages/LoginPage.tsx
 
 **Checkpoint**: User Story 6 is independently functional
 
@@ -146,9 +146,9 @@ description: "Task list for UC-04 login implementation"
 
 **Purpose**: Finish cross-cutting updates and documentation alignment
 
-- [ ] T028 [P] Align API contract if needed in /Users/mkodi/Documents/University/Year 5/ECE 493/Lab 2/ECE493Lab2/specs/004-log-in-to-the-system/contracts/uc-04-login.openapi.yaml
-- [ ] T029 [P] Update quickstart notes for lockout auto-unlock in /Users/mkodi/Documents/University/Year 5/ECE 493/Lab 2/ECE493Lab2/specs/004-log-in-to-the-system/quickstart.md
-- [ ] T030 Add credential redaction guidance in backend/src/services/auth_logger.ts
+- [X] T028 [P] Align API contract if needed in /Users/mkodi/Documents/University/Year 5/ECE 493/Lab 2/ECE493Lab2/specs/004-log-in-to-the-system/contracts/uc-04-login.openapi.yaml
+- [X] T029 [P] Update quickstart notes for lockout auto-unlock in /Users/mkodi/Documents/University/Year 5/ECE 493/Lab 2/ECE493Lab2/specs/004-log-in-to-the-system/quickstart.md
+- [X] T030 Add credential redaction guidance in backend/src/services/auth_logger.ts
 
 ---
 
