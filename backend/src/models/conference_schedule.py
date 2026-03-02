@@ -12,3 +12,6 @@ ScheduleStatus = Literal["published", "unpublished"]
 class ConferenceSchedule:
     status: ScheduleStatus
     entries: list[ScheduleEntry]
+    is_finalized: bool = False
+    is_approved: bool = False
+    published_at: str | None = None
