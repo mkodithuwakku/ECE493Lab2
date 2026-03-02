@@ -23,10 +23,10 @@ description: "Task list for UC-08 paper metadata implementation"
 
 **Purpose**: Initialize shared modules used across metadata stories
 
-- [ ] T001 Create metadata validation helper in backend/src/services/metadata_validation.ts
-- [ ] T002 [P] Create metadata API client wrapper in frontend/src/services/metadata_client.ts
-- [ ] T003 [P] Create metadata logging utility in backend/src/services/metadata_logger.ts
-- [ ] T004 [P] Create log redaction helper in backend/src/services/log_redactor.ts
+- [x] T001 Create metadata validation helper in backend/src/services/metadata_validation.ts
+- [x] T002 [P] Create metadata API client wrapper in frontend/src/services/metadata_client.ts
+- [x] T003 [P] Create metadata logging utility in backend/src/services/metadata_logger.ts
+- [x] T004 [P] Create log redaction helper in backend/src/services/log_redactor.ts
 
 ---
 
@@ -36,11 +36,11 @@ description: "Task list for UC-08 paper metadata implementation"
 
 **⚠️ CRITICAL**: No user story work can begin until this phase is complete
 
-- [ ] T005 Create submission repository abstraction in backend/src/services/submission_repository.ts
-- [ ] T006 [P] Create metadata repository abstraction in backend/src/services/metadata_repository.ts
-- [ ] T007 [P] Create metadata error mapper in backend/src/api/submissions/metadata_error_mapper.ts
-- [ ] T008 Register metadata route/controller in backend/src/api/submissions/metadata_controller.ts
-- [ ] T009 Ensure auth/authorization middleware protects metadata endpoint in backend/src/api/submissions/metadata_controller.ts
+- [x] T005 Create submission repository abstraction in backend/src/services/submission_repository.ts
+- [x] T006 [P] Create metadata repository abstraction in backend/src/services/metadata_repository.ts
+- [x] T007 [P] Create metadata error mapper in backend/src/api/submissions/metadata_error_mapper.ts
+- [x] T008 Register metadata route/controller in backend/src/api/submissions/metadata_controller.ts
+- [x] T009 Ensure auth/authorization middleware protects metadata endpoint in backend/src/api/submissions/metadata_controller.ts
 
 **Checkpoint**: Foundation ready - user story implementation can now begin
 
@@ -54,13 +54,13 @@ description: "Task list for UC-08 paper metadata implementation"
 
 ### Implementation for User Story 1
 
-- [ ] T010 [US1] Implement validation + storage + update in backend/src/services/metadata_service.ts
-- [ ] T011 [US1] Integrate structured logging + redaction in backend/src/services/metadata_service.ts
-- [ ] T012 [US1] Enforce final-submission lock in backend/src/services/metadata_service.ts
-- [ ] T013 [US1] Implement success response in backend/src/api/submissions/metadata_controller.ts
-- [ ] T014 [P] [US1] Implement metadata form submit + success handling in frontend/src/pages/MetadataPage.tsx
-- [ ] T015 [US1] Wire metadata API call in frontend/src/services/metadata_client.ts
-- [ ] T016 [P] [US1] Block metadata edits after final submission in frontend/src/pages/MetadataPage.tsx
+- [x] T010 [US1] Implement validation + storage + update in backend/src/services/metadata_service.ts
+- [x] T011 [US1] Integrate structured logging + redaction in backend/src/services/metadata_service.ts
+- [x] T012 [US1] Enforce final-submission lock in backend/src/services/metadata_service.ts
+- [x] T013 [US1] Implement success response in backend/src/api/submissions/metadata_controller.ts
+- [x] T014 [P] [US1] Implement metadata form submit + success handling in frontend/src/pages/MetadataPage.tsx
+- [x] T015 [US1] Wire metadata API call in frontend/src/services/metadata_client.ts
+- [x] T016 [P] [US1] Block metadata edits after final submission in frontend/src/pages/MetadataPage.tsx
 
 **Checkpoint**: User Story 1 is independently functional
 
@@ -74,9 +74,9 @@ description: "Task list for UC-08 paper metadata implementation"
 
 ### Implementation for User Story 2
 
-- [ ] T017 [US2] Add missing-field detection in backend/src/services/metadata_validation.ts
-- [ ] T018 [US2] Return missing-fields error in backend/src/api/submissions/metadata_controller.ts
-- [ ] T019 [P] [US2] Display summary error message for missing fields in frontend/src/pages/MetadataPage.tsx
+- [x] T017 [US2] Add missing-field detection in backend/src/services/metadata_validation.ts
+- [x] T018 [US2] Return missing-fields error in backend/src/api/submissions/metadata_controller.ts
+- [x] T019 [P] [US2] Display summary error message for missing fields in frontend/src/pages/MetadataPage.tsx
 
 **Checkpoint**: User Story 2 is independently functional
 
@@ -90,9 +90,9 @@ description: "Task list for UC-08 paper metadata implementation"
 
 ### Implementation for User Story 3
 
-- [ ] T020 [US3] Add invalid-field detection in backend/src/services/metadata_validation.ts
-- [ ] T021 [US3] Return invalid-metadata error in backend/src/api/submissions/metadata_controller.ts
-- [ ] T022 [P] [US3] Display summary validation error in frontend/src/pages/MetadataPage.tsx
+- [x] T020 [US3] Add invalid-field detection in backend/src/services/metadata_validation.ts
+- [x] T021 [US3] Return invalid-metadata error in backend/src/api/submissions/metadata_controller.ts
+- [x] T022 [P] [US3] Display summary validation error in frontend/src/pages/MetadataPage.tsx
 
 **Checkpoint**: User Story 3 is independently functional
 
@@ -106,9 +106,9 @@ description: "Task list for UC-08 paper metadata implementation"
 
 ### Implementation for User Story 4
 
-- [ ] T023 [US4] Map validation failure in backend/src/services/metadata_service.ts
-- [ ] T024 [US4] Return validation failure message in backend/src/api/submissions/metadata_controller.ts
-- [ ] T025 [P] [US4] Display validation failure message in frontend/src/pages/MetadataPage.tsx
+- [x] T023 [US4] Map validation failure in backend/src/services/metadata_service.ts
+- [x] T024 [US4] Return validation failure message in backend/src/api/submissions/metadata_controller.ts
+- [x] T025 [P] [US4] Display validation failure message in frontend/src/pages/MetadataPage.tsx
 
 **Checkpoint**: User Story 4 is independently functional
 
@@ -122,9 +122,9 @@ description: "Task list for UC-08 paper metadata implementation"
 
 ### Implementation for User Story 5
 
-- [ ] T026 [US5] Map storage failure in backend/src/services/metadata_service.ts
-- [ ] T027 [US5] Return storage failure response in backend/src/api/submissions/metadata_controller.ts
-- [ ] T028 [P] [US5] Display storage failure message in frontend/src/pages/MetadataPage.tsx
+- [x] T026 [US5] Map storage failure in backend/src/services/metadata_service.ts
+- [x] T027 [US5] Return storage failure response in backend/src/api/submissions/metadata_controller.ts
+- [x] T028 [P] [US5] Display storage failure message in frontend/src/pages/MetadataPage.tsx
 
 **Checkpoint**: User Story 5 is independently functional
 
@@ -134,8 +134,8 @@ description: "Task list for UC-08 paper metadata implementation"
 
 **Purpose**: Finish cross-cutting updates and documentation alignment
 
-- [ ] T029 [P] Align API contract in /Users/mkodi/Documents/University/Year 5/ECE 493/Lab 2/ECE493Lab2/specs/008-provide-paper-metadata/contracts/uc-08-metadata.openapi.yaml
-- [ ] T030 [P] Update quickstart notes for metadata error handling in /Users/mkodi/Documents/University/Year 5/ECE 493/Lab 2/ECE493Lab2/specs/008-provide-paper-metadata/quickstart.md
+- [x] T029 [P] Align API contract in /Users/mkodi/Documents/University/Year 5/ECE 493/Lab 2/ECE493Lab2/specs/008-provide-paper-metadata/contracts/uc-08-metadata.openapi.yaml
+- [x] T030 [P] Update quickstart notes for metadata error handling in /Users/mkodi/Documents/University/Year 5/ECE 493/Lab 2/ECE493Lab2/specs/008-provide-paper-metadata/quickstart.md
 
 ---
 

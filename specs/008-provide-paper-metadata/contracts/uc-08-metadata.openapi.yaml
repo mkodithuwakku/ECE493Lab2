@@ -21,7 +21,7 @@ paths:
             schema:
               type: object
               properties:
-                authorNames:
+                author_names:
                   type: array
                   items:
                     type: string
@@ -29,7 +29,7 @@ paths:
                   type: array
                   items:
                     type: string
-                contactEmail:
+                contact_email:
                   type: string
                 abstract:
                   type: string
@@ -37,15 +37,15 @@ paths:
                   type: array
                   items:
                     type: string
-                paperSource:
+                paper_source:
                   type: string
               required:
-                - authorNames
+                - author_names
                 - affiliations
-                - contactEmail
+                - contact_email
                 - abstract
                 - keywords
-                - paperSource
+                - paper_source
       responses:
         "200":
           description: Metadata saved
@@ -65,8 +65,15 @@ paths:
               schema:
                 type: object
                 properties:
-                  error:
+                  message:
                     type: string
+        "409":
+          description: Submission finalized (metadata locked)
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
                   message:
                     type: string
         "500":
@@ -76,7 +83,5 @@ paths:
               schema:
                 type: object
                 properties:
-                  error:
-                    type: string
                   message:
                     type: string

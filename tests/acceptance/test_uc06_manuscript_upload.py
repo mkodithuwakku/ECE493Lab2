@@ -94,6 +94,9 @@ class StubSubmissionRepository(SubmissionRepository):
     def associate_manuscript(self, submission_id: str, file_id: str) -> None:
         self.associations.append((submission_id, file_id))
 
+    def is_finalized(self, submission_id: str) -> bool:
+        return False
+
 
 class StubFileStorageService:
     def __init__(self, *, interrupted: bool = False, fail: bool = False) -> None:
