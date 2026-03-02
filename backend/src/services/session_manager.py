@@ -15,3 +15,6 @@ class Session:
 class SessionManager(Protocol):
     def create_session(self, user_id: str) -> Session:
         ...
+
+    def terminate_all_sessions(self, user_id: str) -> None:
+        ...

@@ -21,6 +21,9 @@ class UserAccountRepository(Protocol):
     def find_by_identifier(self, identifier: str) -> Optional[UserAccountRecord]:
         ...
 
+    def update_password(self, user_id: str, password_hash: str) -> None:
+        ...
+
     def update_login_failure(
         self,
         user_id: str,

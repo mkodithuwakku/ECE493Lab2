@@ -11,6 +11,7 @@ class AuthLogEntry:
     identifier: Optional[str] = None
     user_id: Optional[str] = None
     message: Optional[str] = None
+    trace_id: Optional[str] = None
 
 
 def log_auth_event(entry: AuthLogEntry) -> None:
@@ -26,4 +27,5 @@ def redact_sensitive(entry: AuthLogEntry) -> AuthLogEntry:
         identifier="[redacted]" if entry.identifier else None,
         user_id=entry.user_id,
         message=entry.message.replace("password", "[redacted]") if entry.message else None,
+        trace_id=entry.trace_id,
     )
